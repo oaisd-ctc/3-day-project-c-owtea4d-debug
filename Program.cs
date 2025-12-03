@@ -1,4 +1,4 @@
-﻿using Program
+﻿public class Program
 {
-    
+
 }
