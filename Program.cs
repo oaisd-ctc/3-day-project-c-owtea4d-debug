@@ -3,7 +3,14 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        theHangman(false);
+        while (true)
+        {
+
+
+
+
+            theHangman(false);
+        }
     }
     public static void theHangman(bool n)
     {
@@ -112,7 +119,7 @@ public class Program
                 Thread.Sleep(1500);
                 Console.WriteLine();
                 Console.Clear();
-                Console.WriteLine("Isaak");
+                Console.WriteLine("Izaak");
                 Thread.Sleep(1100);
                 Console.WriteLine("Brain behind it all");
                 Thread.Sleep(900);
@@ -132,10 +139,14 @@ public class Program
                 Thread.Sleep(900);
                 Console.Clear();
             }
-            if(credits == "no")
+            if (credits == "no")
             {
                 Console.Clear();
             }
         }
+    }
+    public static void mainUISystem()
+    {
+        
     }
 }
