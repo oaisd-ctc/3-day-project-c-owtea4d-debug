@@ -1,9 +1,28 @@
-﻿using System;
+using System;
 public class Program
 {
     public static void Main(string[] args)
     {
-        theHangman(false);
+
+        Console.WriteLine("Enter a letter to search for:");
+        char characterToFind = Console.ReadLine()[0];
+    }
+    public static void characterChecker(string name, char characterToFind)
+    {
+        bool characterChecker = false;
+
+        foreach (char letter in name)
+        {
+            if (letter == characterToFind)
+            {
+                characterChecker = true;-
+            }
+            else
+            {
+                characterChecker = false;
+            }
+        }
+        theHangman(characterChecker);
     }
     public static void theHangman(bool n)
     {
@@ -137,5 +156,6 @@ public class Program
                 Console.Clear();
             }
         }
+
     }
 }
