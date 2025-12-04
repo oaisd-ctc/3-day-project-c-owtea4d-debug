@@ -3,14 +3,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        while (true)
-        {
-
-
-
-
-            theHangman(false);
-        }
+        
     }
     public static void theHangman(bool n)
     {
@@ -147,6 +140,6 @@ public class Program
     }
     public static void mainUISystem()
     {
-        
+
     }
 }
