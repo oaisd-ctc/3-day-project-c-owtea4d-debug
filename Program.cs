@@ -1,41 +1,42 @@
 using System;
 public class Program
 {
-
+    static int counter = 0;
     static string[] Names = {"martinez", "luyk", "benjamin", "caden", "carlos", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler"};
 
     public static void Main(string[] args)
     {
+    
         Random rnd = new Random();
         int Namesi = rnd.Next(0, 18);
+        while (true)
+        {
         Console.WriteLine(Names[Namesi]);
       //the above writeline is not permanent its just so that we know its generating the names correctly
         Console.WriteLine("Enter a letter to search for:");
         char characterToFind = Console.ReadLine()[0];
+        characterChecker(Names[Namesi], characterToFind);
+        }
     }
     public static void characterChecker(string name, char characterToFind)
     {
-        bool characterChecker = false;
+        bool foundChar = false;
 
         foreach (char letter in name)
         {
             if (letter == characterToFind)
             {
-                characterChecker = true;-
-            }
-            else
-            {
-                characterChecker = false;
+                foundChar = true;
+                break;
             }
         }
-        theHangman(characterChecker);
+        theHangman(foundChar);
     }
-    public static void theHangman(bool n)
+    public static void theHangman(bool foundChar)
     {
-        int counter = 0;
-        if (n == false)
+       if (!foundChar)
         {
-            counter = counter + 1;
+            counter++;
         }
         if (counter == 0)
         {
