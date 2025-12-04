@@ -4,7 +4,7 @@ public class Program
 {
 
     static int counter = 0;
-    static string[] Names = { "martinez", "luyk", "benjamin", "caden", "carlos", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler" };
+    static string[] Names = {};
 
     public static void Main(string[] args)
     {
@@ -71,6 +71,21 @@ public class Program
     }
     public static void gameStarting()
     {
+        Console.WriteLine("Select your difficulty");
+        Console.WriteLine($"1. Noob");
+        Console.WriteLine($"2. Pro");
+        Console.WriteLine($"3. Hacker");
+        Console.WriteLine($"4. God");
+        string DifficultyInput = Console.ReadLine();
+        int IntConversion = 0;
+        bool isConverted = int.TryParse(DifficultyInput, out IntConversion);
+        if (IntConversion == 1)
+        {
+            Names = Noob();
+        }
+        if (IntConversion == 2) { }
+        if (IntConversion == 3) { }
+        if (IntConversion == 4) { }
         Console.Clear();
         Console.Write("Game Is Starting");
         Thread.Sleep(300);
