@@ -3,40 +3,50 @@ using System;
 public class Program
 {
 
+    static int counter = 0;
     static string[] Names = {"martinez", "luyk", "benjamin", "caden", "carlos", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler"};
+
+    static string[] Names = {};
 
     public static void Main(string[] args)
     {
+    
         Random rnd = new Random();
         int Namesi = rnd.Next(0, 18);
+        while (true)
+        {
         Console.WriteLine(Names[Namesi]);
       //the above writeline is not permanent its just so that we know its generating the names correctly
         Console.WriteLine("Enter a letter to search for:");
         char characterToFind = Console.ReadLine()[0];
+        characterChecker(Names[Namesi], characterToFind);
+        }
     }
     public static void characterChecker(string name, char characterToFind)
     {
-        bool characterChecker = false;
+        bool foundChar = false;
 
         foreach (char letter in name)
         {
             if (letter == characterToFind)
             {
-                characterChecker = true;-
+                foundChar = true;
+                break;
+                characterChecker = true;
             }
             else
             {
                 characterChecker = false;
+
             }
         }
-        theHangman(characterChecker);
+        theHangman(foundChar);
     }
-    public static void theHangman(bool n)
+    public static void theHangman(bool foundChar)
     {
-        int counter = 0;
-        if (n == false)
+       if (!foundChar)
         {
-            counter = counter + 1;
+            counter++;
         }
         if (counter == 0)
         {
@@ -165,6 +175,20 @@ public class Program
         }
 
     }
-
-﻿
-
+    public static void Noob()
+    {
+        string[] Names = {"martinez", "luyk", "benjamin", "caden", "noah", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler"};
+    }
+    public static void Pro()
+    {
+        string[] Names = {"Emmanuel Martinez", "Mr Luyk", "Benjamin Potgeter", "Caden Beyer", "Noah Castaneda", "Gabriel Helmus", "Garnold Crump", "Izaac Wilson", "Joseph Heinz", "Judah Hauch", "Keira Carlson", "Lorilei Forbear", "Lucas Raab", "Mason Hart", "Nuri Banks", "Owen TerHorst", "Owen Walsh", "Sage Little", "Tyler Harris"};
+    }
+    public static void Hacker()
+    {
+        string[] Names = {"MrMartinezCTC", "Mr. Luyk", "Ben-Potgeter-student", "Caden-Beyer-Student", "caasebd-debug", "Gabe", "Garnold-Crump-Student", "izwi160-eng", "josephheinz", "judahhauch", "Keira-Carlson-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "Nuri-Banks-Student", "owtea4d-debug", "OwenTHEWALSH", "sali012-pixel", "tyhad04-spec"};
+    }
+    public static void God()
+    {
+        string[] Names = {"MrMartinezCTC", "Mr. Luyk", "Aiden-clark-student", "alex-lawson-student", "Alvaro-Solis-Student", "Andrew-Abramajtys-Student", "Ben-Potgeter-student", "Benjamin-Altman", "caasebd-debug", "Caden-Beyer-Student", "daama6e-del", "Elijah L.", "Elijah-Young-Student", "Finn-McP", "Gabe", "Gabriel", "Garnold-Crump-Student", "Heath-Zylstra-Student", "izwi160-eng", "Jacob-Flores-Student", "josephheinz", "Fish", "judahhauch", "Keira-Carlson-Student", "Landon-Bolt-student", "Liam-Bowerman", "Logan-Stezowski-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "nakn3eb", "Nuri-Banks-Student", "Owen-Downing-Student", "owtea4d-debug", "OwenTHEWALSH", "Ryan-Haug-Student", "sali012-pixel", "Thomas", "tyhad04-spec", "yos"};
+    }
+}
