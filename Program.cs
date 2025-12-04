@@ -5,15 +5,14 @@ public class Program
 
     static int counter = 0;
     static string[] Names = { "martinez", "luyk", "benjamin", "caden", "carlos", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler" };
-    
+
     public static void Main(string[] args)
     {
-
+        UISystem();
         Random rnd = new Random();
-        int Namesi = rnd.Next(0, 18);
+        int Namesi = rnd.Next(0, 40);
         while (true)
         {
-            UISystem();
             Console.WriteLine(Names[Namesi]);
             //the above writeline is not permanent its just so that we know its generating the names correctly
             Console.WriteLine("Enter a letter to search for:");
