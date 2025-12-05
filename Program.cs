@@ -93,10 +93,10 @@ public class Program
     {
         Console.Clear();
         Console.WriteLine("Select your difficulty");
-        Console.WriteLine($"1. Noob");
-        Console.WriteLine($"2. Pro");
-        Console.WriteLine($"3. Hacker");
-        Console.WriteLine($"4. God");
+        Console.WriteLine($"1. Noob - first names");
+        Console.WriteLine($"2. Pro - first and last names with capitialization");
+        Console.WriteLine($"3. Hacker - github users");
+        Console.WriteLine($"4. God - am and pm github users");
         string DifficultyInput = Console.ReadLine();
         int IntConversion = 0;
         bool isConverted = int.TryParse(DifficultyInput, out IntConversion);
@@ -120,6 +120,30 @@ public class Program
             God();
             randomNumberCounter = 4;
         }
+    }
+    public static void characterChecker(string name, char characterToFind)
+    {
+        bool foundChar = false;
+        
+        if ( characterToFind >= 2)
+            {
+                Console.WriteLine("Please enter 1 character at a time. try again.");
+                counter--;
+            }
+        
+        foreach (char letter in name)
+        {
+            if (letter == characterToFind)
+            {
+                foundChar = true;
+                scoreCounter = scoreCounter + 200;
+                break;
+            }
+        }
+        theHangman(foundChar);
+    }
+    public static void Startingup()
+    {
         Console.Clear();
         Console.Write("PLEASE NOTE!!!");
         Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
@@ -143,7 +167,7 @@ public class Program
         Console.Clear();
         Console.Write("PLEASE NOTE!!!");
         Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
-        Console.WriteLine("You have 1 seconds to prepare.");
+        Console.WriteLine("You have 1 second to prepare.");
         Thread.Sleep(1000);
         Console.Clear();
         Console.Write("Game Is Starting");
@@ -155,25 +179,90 @@ public class Program
         Console.Write(".");
         Console.Clear();
     }
-    public static void characterChecker(string name, char characterToFind)
+    public static void noobmode()
     {
-        bool foundChar = false;
-        string rightorwrong = characterToFind.ToString();
-        if (rightorwrong.Length >= 2)
-            {
-                Console.WriteLine("Please enter 1 character at a time. try again.");
-            }
-        
-        foreach (char letter in name)
-        {
-            if (letter == characterToFind)
-            {
-                foundChar = true;
-                scoreCounter = scoreCounter + 200;
-                break;
-            }
-        }
-        theHangman(foundChar);
+        Console.Clear();
+        Console.WriteLine("Aw you choose noob mode how completely ok of you to do so I dont blame you the other modes is scary 🥶.");
+        Thread.Sleep(2000);
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 5 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 4 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 3 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 2 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 1 second to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("Game Is Starting");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Console.Clear();
+        Console.WriteLine("Oh one more thing before you start. The Owens, since they have the same name, have their last initial right after their name. no spaces. ex: 'owent' 'owenw'");
+        Console.WriteLine("Ill give you 10 more seconds to prepare");
+        Thread.Sleep(10000);
+        Console.Clear();
+    }
+    public static void godmode()
+    {
+        Console.Clear();
+        Console.WriteLine("HOLY GUACAMOLE YOU PICKED GOD MODE1!11!!11!😱😱😱😲😲😲🤯🤯🤯 YOU MUST BE SMART");
+        Thread.Sleep(2000);
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 5 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 4 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 3 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 2 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 1 second to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("Game Is Starting");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Console.Clear();
+        Console.WriteLine("Good luck, you're gonna need it broski🤞");
+        Thread.Sleep(4000);
+        Console.Clear();
     }
     public static void theHangman(bool foundChar)
     {
@@ -285,7 +374,7 @@ public class Program
                 Thread.Sleep(1100);
                 Console.WriteLine("Brain behind it all");
                 Thread.Sleep(900);
-                Console.WriteLine("True Gamer");
+                Console.WriteLine("uhhhhhhhhhhhh");
                 Thread.Sleep(900);
                 Console.WriteLine("Intensive Coder");
                 Thread.Sleep(1500);
@@ -313,6 +402,7 @@ public class Program
         Random rnd = new Random();
         int Namesi = rnd.Next(0, 18);
         string[] Names = { "martinez", "luyk", "benjamin", "caden", "noah", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler" };
+        noobmode();
         MainMethod(Names, Namesi);
     }
     public static void Pro()
@@ -320,6 +410,7 @@ public class Program
         Random rnd = new Random();
         int Namesi = rnd.Next(0, 18);
         string[] Names = { "Emmanuel Martinez", "Mr Luyk", "Benjamin Potgeter", "Caden Beyer", "Noah Castaneda", "Gabriel Helmus", "Garnold Crump", "Izaac Wilson", "Joseph Heinz", "Judah Hauch", "Keira Carlson", "Lorilei Forbear", "Lucas Raab", "Mason Hart", "Nuri Banks", "Owen TerHorst", "Owen Walsh", "Sage Little", "Tyler Harris" };
+        Startingup();
         MainMethod(Names, Namesi);
     }
     public static void Hacker()
@@ -327,6 +418,7 @@ public class Program
         Random rnd = new Random();
         int Namesi = rnd.Next(0, 18);
         string[] Names = { "MrMartinezCTC", "Mr. Luyk", "Ben-Potgeter-student", "Caden-Beyer-Student", "caasebd-debug", "Gabe", "Garnold-Crump-Student", "izwi160-eng", "josephheinz", "judahhauch", "Keira-Carlson-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "Nuri-Banks-Student", "owtea4d-debug", "OwenTHEWALSH", "sali012-pixel", "tyhad04-spec" };
+        Startingup();
         MainMethod(Names, Namesi);
     }
     public static void God()
@@ -334,6 +426,7 @@ public class Program
         Random rnd = new Random();
         int Namesi = rnd.Next(0, 40);
         string[] Names = { "MrMartinezCTC", "Mr. Luyk", "Aiden-clark-student", "alex-lawson-student", "Alvaro-Solis-Student", "Andrew-Abramajtys-Student", "Ben-Potgeter-student", "Benjamin-Altman", "caasebd-debug", "Caden-Beyer-Student", "daama6e-del", "Elijah L.", "Elijah-Young-Student", "Finn-McP", "Gabe", "Gabriel", "Garnold-Crump-Student", "Heath-Zylstra-Student", "izwi160-eng", "Jacob-Flores-Student", "josephheinz", "Fish", "judahhauch", "Keira-Carlson-Student", "Landon-Bolt-student", "Liam-Bowerman", "Logan-Stezowski-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "nakn3eb", "Nuri-Banks-Student", "Owen-Downing-Student", "owtea4d-debug", "OwenTHEWALSH", "Ryan-Haug-Student", "sali012-pixel", "Thomas", "tyhad04-spec", "yos" };
+        godmode();
         MainMethod(Names, Namesi);
 
 
