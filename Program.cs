@@ -1,4 +1,3 @@
-
 using System;
 public class Program
 {
@@ -47,9 +46,13 @@ public class Program
         {
             Console.WriteLine("Enter a letter to search for:");
             char characterToFind = Console.ReadLine()[0];
+            Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
         }
     }
+
+
+    //-----------------------------------------UI Systems Below 👇------------------------------------------------
     public static void UISystem()
     {
         for (int i = 1; i <= 11; i++)
@@ -73,7 +76,7 @@ public class Program
             }
         }
         Thread.Sleep(1500);
-        Console.WriteLine($"1. Start Game");
+        Console.WriteLine($"1. Start Game                   Your score: {scoreCounter}");
         Console.WriteLine($"2. Instructions");
         Console.WriteLine($"3. Settings");
         Console.WriteLine($"4. Exit");
@@ -84,9 +87,93 @@ public class Program
         {
             gameStarting();
         }
-        if (IntConversion == 2) { }
-        if (IntConversion == 3) { }
-        if (IntConversion == 4) { }
+        if (IntConversion == 2)
+        {
+            gameInstructions();
+        }
+        if (IntConversion == 3)
+        {
+            gameSettings();
+        }
+        if (IntConversion == 4)
+        {
+            Console.Clear();
+            Console.WriteLine("Are You Sure?");
+            Console.WriteLine("You will permentally lose your score.");
+            Console.Write("Yes or No: ");
+            while (true)
+            {
+                string exitInput = Console.ReadLine().ToLower();
+                if (exitInput == "yes")
+                {
+                    Console.Clear();
+                    Environment.Exit(0);
+                }
+                else if (exitInput == "no")
+                {
+                    Console.Clear();
+                    UISystem();
+                }
+                Console.WriteLine("Invalid Input. Please Try Again.");
+            }
+        }
+
+    }
+    public static void gameSettings()
+    {
+
+    }
+    public static void gameInstructions()
+    {
+        Console.WriteLine("Purpose of the Game:");
+        Console.WriteLine("Guess the hidden word by choosing letters.");
+        Console.WriteLine("Each incorrect guess costs you a life.");
+        Console.WriteLine("Survive long enough to reveal the full word");
+        Console.WriteLine("How to Enter Guesses");
+        Console.WriteLine("Enter one letter at a time");
+        Console.WriteLine("Letters must be alphabetic(A-Z).");
+        Console.WriteLine("Case does not matter.");
+        Console.WriteLine("How Mistakes Work");
+        Console.WriteLine("You have 6 lives");
+        Console.WriteLine("Each incorrect guess removes one life.");
+        Console.WriteLine("If you reach zero, the game ends.");
+        Console.WriteLine("Revealing the Word:");
+        Console.WriteLine("Correct letters are shown in their positions.");
+        Console.WriteLine("Unknown letter remain blanks/underscores.");
+        Console.WriteLine("Repeated Guesses:");
+        Console.WriteLine("Duplicate guesses do not cost lives.");
+        Console.WriteLine("The game will warn you if you already tried that letter.");
+        Console.WriteLine("Winning and Losing:");
+        Console.WriteLine("Win by guessing all letters before running out of lives.");
+        Console.WriteLine("Lose if your lives reach zero; the full word is then revealed.");
+        Console.WriteLine("Difficulty Levels:");
+        Console.WriteLine("Noob: Out of all the AM students. Guess there name.");
+        Console.WriteLine("Pro: Now guess the AM students last names aswell.");
+        Console.WriteLine("Hacker: This might be a little challenging. Guess the AM students GITHUB user-names.");
+        Console.WriteLine("God: This is by far the easiest 💀💀💀... Lol... its just AM and PM github user-names.");
+        Console.WriteLine("Let me know when your ready to return. You better just type 'Ready'");
+        while (true)
+        {
+            string returnToUI = Console.ReadLine().ToLower();
+            if (returnToUI == "ready")
+            {
+                UISystem();
+            }
+            Console.Write("I dont really care what you typed. 😂");
+            Thread.Sleep(500);
+            Console.Write(" .");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.WriteLine();
+            UISystem();
+        }
+
+
+
+
 
     }
     public static void gameStarting()
@@ -131,6 +218,9 @@ public class Program
         Console.Write(".");
         Console.Clear();
     }
+
+    //-----------------------------------------UI Systems Above 👆------------------------------------------------
+
     public static void characterChecker(string name, char characterToFind)
     {
         bool foundChar = false;
@@ -144,7 +234,13 @@ public class Program
                 foundChar = true;
             }
         }
+
+        if(foundChar == false)
+        {
+            scoreCounter = scoreCounter - 100;
+        }
         displayRevealedChar();
+
         theHangman(foundChar);
     }
     public static void displayRevealedChar()
@@ -236,11 +332,11 @@ public class Program
 
             Thread.Sleep(1500);
             Console.Clear();
-            Console.WriteLine(".");
+            Console.Write(".");
             Thread.Sleep(300);
-            Console.WriteLine(".");
+            Console.Write(".");
             Thread.Sleep(300);
-            Console.WriteLine(".");
+            Console.Write(".");
             Thread.Sleep(300);
             Console.WriteLine();
             Console.WriteLine($"Game Over. Nice Try.");
@@ -283,14 +379,18 @@ public class Program
                 Console.WriteLine("tbh");
                 Thread.Sleep(900);
                 Console.Clear();
+                UISystem();
             }
             if (credits == "no")
             {
                 Console.Clear();
+                UISystem();
             }
         }
 
     }
+    
+    //-----------------------------------------Difficulty Systems Below 👇------------------------------------------------
     public static void Noob()
     {
         Random rnd = new Random();
@@ -321,4 +421,8 @@ public class Program
 
 
     }
+    //-----------------------------------------Difficulty Systems Above 👆------------------------------------------------
 }
+
+}
+
