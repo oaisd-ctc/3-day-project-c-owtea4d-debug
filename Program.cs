@@ -4,23 +4,97 @@ public class Program
 {
 
     static int counter = 0;
-    static string[] Names = {"martinez", "luyk", "benjamin", "caden", "carlos", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler"};
-
-    static string[] Names = {};
+    static string[] Names = {" "};
 
     public static void Main(string[] args)
     {
-    
+        UISystem();
         Random rnd = new Random();
-        int Namesi = rnd.Next(0, 18);
+        int Namesi = rnd.Next(0, 40);
         while (true)
         {
-        Console.WriteLine(Names[Namesi]);
-      //the above writeline is not permanent its just so that we know its generating the names correctly
-        Console.WriteLine("Enter a letter to search for:");
-        char characterToFind = Console.ReadLine()[0];
-        characterChecker(Names[Namesi], characterToFind);
+            Console.WriteLine(Names[Namesi]);
+            //the above writeline is not permanent its just so that we know its generating the names correctly
+            Console.WriteLine("Enter a letter to search for:");
+            if (counter == 0)
+            {
+                Console.WriteLine($"          +---+");
+                Console.WriteLine($"          |   |");
+                Console.WriteLine($"              |");
+                Console.WriteLine($"              |");
+                Console.WriteLine($"              |");
+                Console.WriteLine($"              |");
+                Console.WriteLine($"          =========");
+            }
+            char characterToFind = Console.ReadLine()[0];
+            characterChecker(Names[Namesi], characterToFind);
         }
+    }
+    public static void UISystem()
+    {
+        for (int i = 1; i <= 11; i++)
+        {
+            if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11)
+            {
+                Console.WriteLine("========================");
+                Console.WriteLine("   OPERATION HANGMAN");
+                Console.WriteLine("========================");
+                Thread.Sleep(500);
+                Console.Clear();
+            }
+            if (i == 2 || i == 4 || i == 6 || i == 8 || i == 10)
+            {
+
+                Console.WriteLine();
+                Console.WriteLine("   OPERATION HANGMAN");
+                Console.WriteLine();
+                Thread.Sleep(500);
+                Console.Clear();
+            }
+        }
+        Thread.Sleep(1500);
+        Console.WriteLine($"1. Start Game");
+        Console.WriteLine($"2. Instructions");
+        Console.WriteLine($"3. Settings");
+        Console.WriteLine($"4. Exit");
+        string UIInput = Console.ReadLine();
+        int IntConversion = 0;
+        bool isConverted = int.TryParse(UIInput, out IntConversion);
+        if (IntConversion == 1)
+        {
+            gameStarting();
+        }
+        if (IntConversion == 2) { }
+        if (IntConversion == 3) { }
+        if (IntConversion == 4) { }
+
+    }
+    public static void gameStarting()
+    {
+        Console.WriteLine("Select your difficulty");
+        Console.WriteLine($"1. Noob");
+        Console.WriteLine($"2. Pro");
+        Console.WriteLine($"3. Hacker");
+        Console.WriteLine($"4. God");
+        string DifficultyInput = Console.ReadLine();
+        int IntConversion = 0;
+        bool isConverted = int.TryParse(DifficultyInput, out IntConversion);
+        if (IntConversion == 1)
+        {
+            
+        }
+        if (IntConversion == 2) { }
+        if (IntConversion == 3) { }
+        if (IntConversion == 4) { }
+        Console.Clear();
+        Console.Write("Game Is Starting");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Console.Clear();
     }
     public static void characterChecker(string name, char characterToFind)
     {
@@ -32,19 +106,13 @@ public class Program
             {
                 foundChar = true;
                 break;
-                characterChecker = true;
-            }
-            else
-            {
-                characterChecker = false;
-
             }
         }
         theHangman(foundChar);
     }
     public static void theHangman(bool foundChar)
     {
-       if (!foundChar)
+        if (!foundChar)
         {
             counter++;
         }
@@ -168,7 +236,7 @@ public class Program
                 Thread.Sleep(900);
                 Console.Clear();
             }
-            if(credits == "no")
+            if (credits == "no")
             {
                 Console.Clear();
             }
@@ -177,18 +245,18 @@ public class Program
     }
     public static void Noob()
     {
-        string[] Names = {"martinez", "luyk", "benjamin", "caden", "noah", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler"};
+        string[] Names = { "martinez", "luyk", "benjamin", "caden", "noah", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler" };
     }
     public static void Pro()
     {
-        string[] Names = {"Emmanuel Martinez", "Mr Luyk", "Benjamin Potgeter", "Caden Beyer", "Noah Castaneda", "Gabriel Helmus", "Garnold Crump", "Izaac Wilson", "Joseph Heinz", "Judah Hauch", "Keira Carlson", "Lorilei Forbear", "Lucas Raab", "Mason Hart", "Nuri Banks", "Owen TerHorst", "Owen Walsh", "Sage Little", "Tyler Harris"};
+        string[] Names = { "Emmanuel Martinez", "Mr Luyk", "Benjamin Potgeter", "Caden Beyer", "Noah Castaneda", "Gabriel Helmus", "Garnold Crump", "Izaac Wilson", "Joseph Heinz", "Judah Hauch", "Keira Carlson", "Lorilei Forbear", "Lucas Raab", "Mason Hart", "Nuri Banks", "Owen TerHorst", "Owen Walsh", "Sage Little", "Tyler Harris" };
     }
     public static void Hacker()
     {
-        string[] Names = {"MrMartinezCTC", "Mr. Luyk", "Ben-Potgeter-student", "Caden-Beyer-Student", "caasebd-debug", "Gabe", "Garnold-Crump-Student", "izwi160-eng", "josephheinz", "judahhauch", "Keira-Carlson-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "Nuri-Banks-Student", "owtea4d-debug", "OwenTHEWALSH", "sali012-pixel", "tyhad04-spec"};
+        string[] Names = { "MrMartinezCTC", "Mr. Luyk", "Ben-Potgeter-student", "Caden-Beyer-Student", "caasebd-debug", "Gabe", "Garnold-Crump-Student", "izwi160-eng", "josephheinz", "judahhauch", "Keira-Carlson-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "Nuri-Banks-Student", "owtea4d-debug", "OwenTHEWALSH", "sali012-pixel", "tyhad04-spec" };
     }
     public static void God()
     {
-        string[] Names = {"MrMartinezCTC", "Mr. Luyk", "Aiden-clark-student", "alex-lawson-student", "Alvaro-Solis-Student", "Andrew-Abramajtys-Student", "Ben-Potgeter-student", "Benjamin-Altman", "caasebd-debug", "Caden-Beyer-Student", "daama6e-del", "Elijah L.", "Elijah-Young-Student", "Finn-McP", "Gabe", "Gabriel", "Garnold-Crump-Student", "Heath-Zylstra-Student", "izwi160-eng", "Jacob-Flores-Student", "josephheinz", "Fish", "judahhauch", "Keira-Carlson-Student", "Landon-Bolt-student", "Liam-Bowerman", "Logan-Stezowski-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "nakn3eb", "Nuri-Banks-Student", "Owen-Downing-Student", "owtea4d-debug", "OwenTHEWALSH", "Ryan-Haug-Student", "sali012-pixel", "Thomas", "tyhad04-spec", "yos"};
+        string[] Names = { "MrMartinezCTC", "Mr. Luyk", "Aiden-clark-student", "alex-lawson-student", "Alvaro-Solis-Student", "Andrew-Abramajtys-Student", "Ben-Potgeter-student", "Benjamin-Altman", "caasebd-debug", "Caden-Beyer-Student", "daama6e-del", "Elijah L.", "Elijah-Young-Student", "Finn-McP", "Gabe", "Gabriel", "Garnold-Crump-Student", "Heath-Zylstra-Student", "izwi160-eng", "Jacob-Flores-Student", "josephheinz", "Fish", "judahhauch", "Keira-Carlson-Student", "Landon-Bolt-student", "Liam-Bowerman", "Logan-Stezowski-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "nakn3eb", "Nuri-Banks-Student", "Owen-Downing-Student", "owtea4d-debug", "OwenTHEWALSH", "Ryan-Haug-Student", "sali012-pixel", "Thomas", "tyhad04-spec", "yos" };
     }
 }
