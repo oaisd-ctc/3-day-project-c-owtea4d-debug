@@ -6,6 +6,7 @@ public class Program
     static int randomNumberCounter;
     static int counter;
     static int scoreCounter;
+    static char[] revealedChar;
 
     public static void Main(string[] args)
     {
@@ -29,23 +30,22 @@ public class Program
     }
     public static void MainMethod(string[] Names, int Namesi)
     {
-
+        Console.WriteLine($"          +---+");
+        Console.WriteLine($"          |   |");
+        Console.WriteLine($"              |");
+        Console.WriteLine($"              |");
+        Console.WriteLine($"              |");
+        Console.WriteLine($"              |");
+        Console.WriteLine($"          =========");
+        revealedChar = new char[Names[Namesi].Length];
+        for (int i = 0; i < revealedChar.Length; i++)
+        {
+            revealedChar[i] = '_';
+        }
+      
         while (true)
         {
-            Console.WriteLine(Names[Namesi]);
-            //the above writeline is not permanent its just so that we know its generating the names correctly
-            Console.WriteLine(Namesi);
             Console.WriteLine("Enter a letter to search for:");
-            if (counter == 0)
-            {
-                Console.WriteLine($"          +---+");
-                Console.WriteLine($"          |   |");
-                Console.WriteLine($"              |");
-                Console.WriteLine($"              |");
-                Console.WriteLine($"              |");
-                Console.WriteLine($"              |");
-                Console.WriteLine($"          =========");
-            }
             char characterToFind = Console.ReadLine()[0];
             characterChecker(Names[Namesi], characterToFind);
         }
@@ -98,6 +98,7 @@ public class Program
         Console.WriteLine($"3. Hacker");
         Console.WriteLine($"4. God");
         string DifficultyInput = Console.ReadLine();
+        Console.Clear();
         int IntConversion = 0;
         bool isConverted = int.TryParse(DifficultyInput, out IntConversion);
         if (IntConversion == 1)
@@ -134,16 +135,28 @@ public class Program
     {
         bool foundChar = false;
 
-        foreach (char letter in name)
+        for (int i = 0; i < name.Length; i++)
         {
-            if (letter == characterToFind)
+            if (name[i] == characterToFind)
             {
-                foundChar = true;
+                revealedChar[i] = characterToFind;
                 scoreCounter = scoreCounter + 200;
-                break;
+                foundChar = true;
             }
         }
+        displayRevealedChar();
         theHangman(foundChar);
+    }
+    public static void displayRevealedChar()
+    {
+        Console.WriteLine();
+
+        foreach (char i in revealedChar)
+        {
+            Console.Write(i  + " ");
+        }
+
+        Console.WriteLine();
     }
     public static void theHangman(bool foundChar)
     {
@@ -282,7 +295,7 @@ public class Program
     {
         Random rnd = new Random();
         int Namesi = rnd.Next(0, 18);
-        string[] Names = { "martinez", "luyk", "benjamin", "caden", "noah", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler" };
+        string[] Names = { "martinez", "luyk", "benjamin", "caden", "noah", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owen t", "owen w", "sage", "tyler" };
         MainMethod(Names, Namesi);
     }
     public static void Pro()
