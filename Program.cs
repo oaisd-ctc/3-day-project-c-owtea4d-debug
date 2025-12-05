@@ -87,6 +87,31 @@ public class Program
         if (IntConversion == 3) { }
         if (IntConversion == 4) { }
         Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 5 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 4 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 3 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 2 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 1 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
         Console.Write("Game Is Starting");
         Thread.Sleep(300);
         Console.Write(".");
@@ -99,7 +124,12 @@ public class Program
     public static void characterChecker(string name, char characterToFind)
     {
         bool foundChar = false;
-
+        string rightorwrong = characterToFind.ToString();
+        if (rightorwrong.Length >= 2)
+            {
+                Console.WriteLine("Please enter 1 character at a time. try again.");
+            }
+        
         foreach (char letter in name)
         {
             if (letter == characterToFind)
@@ -216,7 +246,7 @@ public class Program
                 Thread.Sleep(1500);
                 Console.WriteLine();
                 Console.Clear();
-                Console.WriteLine("Isaak");
+                Console.WriteLine("Izaac");
                 Thread.Sleep(1100);
                 Console.WriteLine("Brain behind it all");
                 Thread.Sleep(900);
