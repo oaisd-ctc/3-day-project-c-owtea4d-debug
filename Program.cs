@@ -42,7 +42,7 @@ public class Program
         {
             revealedChar[i] = '_';
         }
-
+      
         while (true)
         {
             Console.WriteLine("Enter a letter to search for:");
