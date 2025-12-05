@@ -4,7 +4,7 @@ public class Program
 {
 
     static int counter = 0;
-    static string[] Names = {};
+    static string[] Names = {" "};
 
     public static void Main(string[] args)
     {
@@ -81,7 +81,7 @@ public class Program
         bool isConverted = int.TryParse(DifficultyInput, out IntConversion);
         if (IntConversion == 1)
         {
-            Names = Noob();
+            
         }
         if (IntConversion == 2) { }
         if (IntConversion == 3) { }
