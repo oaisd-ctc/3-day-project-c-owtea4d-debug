@@ -2,15 +2,22 @@
 using System;
 public class Program
 {
-
     static int counter = 0;
-    static string[] Names = {" "};
+    static string[] Names = { " " };
+    static char[] revealedChar;
 
     public static void Main(string[] args)
     {
         UISystem();
         Random rnd = new Random();
         int Namesi = rnd.Next(0, 40);
+       
+       revealedChar = new char[Names[Namesi].Length];
+        for (int i = 0; i < revealedChar.Length; i++)
+        {
+            revealedChar[i] = '_';
+        }
+
         while (true)
         {
             Console.WriteLine(Names[Namesi]);
@@ -81,7 +88,7 @@ public class Program
         bool isConverted = int.TryParse(DifficultyInput, out IntConversion);
         if (IntConversion == 1)
         {
-            
+
         }
         if (IntConversion == 2) { }
         if (IntConversion == 3) { }
@@ -100,15 +107,26 @@ public class Program
     {
         bool foundChar = false;
 
-        foreach (char letter in name)
+        for (int i = 0; i < name.Length; i++)
         {
-            if (letter == characterToFind)
+            if (name[i] == characterToFind)
             {
+                revealedChar[i] = characterToFind;
                 foundChar = true;
-                break;
             }
         }
         theHangman(foundChar);
+    }
+    public static void displayRevealedChar()
+    {
+        Console.WriteLine();
+
+        foreach (char i in revealedChar)
+        {
+            Console.WriteLine(i  + " ");
+        }
+
+        Console.WriteLine("i");
     }
     public static void theHangman(bool foundChar)
     {
