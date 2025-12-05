@@ -3,18 +3,38 @@ using System;
 public class Program
 {
 
-    static int counter = 0;
-    static string[] Names = {" "};
+    static int randomNumberCounter;
+    static int counter;
+    static int scoreCounter;
 
     public static void Main(string[] args)
     {
         UISystem();
-        Random rnd = new Random();
-        int Namesi = rnd.Next(0, 40);
+        if (randomNumberCounter == 1)
+        {
+            Noob();
+        }
+        if (randomNumberCounter == 2)
+        {
+            Pro();
+        }
+        if (randomNumberCounter == 3)
+        {
+            Hacker();
+        }
+        if (randomNumberCounter == 4)
+        {
+            God();
+        }
+    }
+    public static void MainMethod(string[] Names, int Namesi)
+    {
+
         while (true)
         {
             Console.WriteLine(Names[Namesi]);
             //the above writeline is not permanent its just so that we know its generating the names correctly
+            Console.WriteLine(Namesi);
             Console.WriteLine("Enter a letter to search for:");
             if (counter == 0)
             {
@@ -71,6 +91,7 @@ public class Program
     }
     public static void gameStarting()
     {
+        Console.Clear();
         Console.WriteLine("Select your difficulty");
         Console.WriteLine($"1. Noob");
         Console.WriteLine($"2. Pro");
@@ -81,11 +102,24 @@ public class Program
         bool isConverted = int.TryParse(DifficultyInput, out IntConversion);
         if (IntConversion == 1)
         {
-            
+            Noob();
+            randomNumberCounter = 1;
         }
-        if (IntConversion == 2) { }
-        if (IntConversion == 3) { }
-        if (IntConversion == 4) { }
+        if (IntConversion == 2)
+        {
+            Pro();
+            randomNumberCounter = 2;
+        }
+        if (IntConversion == 3)
+        {
+            Hacker();
+            randomNumberCounter = 3;
+        }
+        if (IntConversion == 4)
+        {
+            God();
+            randomNumberCounter = 4;
+        }
         Console.Clear();
         Console.Write("PLEASE NOTE!!!");
         Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
@@ -135,6 +169,7 @@ public class Program
             if (letter == characterToFind)
             {
                 foundChar = true;
+                scoreCounter = scoreCounter + 200;
                 break;
             }
         }
@@ -275,18 +310,32 @@ public class Program
     }
     public static void Noob()
     {
+        Random rnd = new Random();
+        int Namesi = rnd.Next(0, 18);
         string[] Names = { "martinez", "luyk", "benjamin", "caden", "noah", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler" };
+        MainMethod(Names, Namesi);
     }
     public static void Pro()
     {
+        Random rnd = new Random();
+        int Namesi = rnd.Next(0, 18);
         string[] Names = { "Emmanuel Martinez", "Mr Luyk", "Benjamin Potgeter", "Caden Beyer", "Noah Castaneda", "Gabriel Helmus", "Garnold Crump", "Izaac Wilson", "Joseph Heinz", "Judah Hauch", "Keira Carlson", "Lorilei Forbear", "Lucas Raab", "Mason Hart", "Nuri Banks", "Owen TerHorst", "Owen Walsh", "Sage Little", "Tyler Harris" };
+        MainMethod(Names, Namesi);
     }
     public static void Hacker()
     {
+        Random rnd = new Random();
+        int Namesi = rnd.Next(0, 18);
         string[] Names = { "MrMartinezCTC", "Mr. Luyk", "Ben-Potgeter-student", "Caden-Beyer-Student", "caasebd-debug", "Gabe", "Garnold-Crump-Student", "izwi160-eng", "josephheinz", "judahhauch", "Keira-Carlson-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "Nuri-Banks-Student", "owtea4d-debug", "OwenTHEWALSH", "sali012-pixel", "tyhad04-spec" };
+        MainMethod(Names, Namesi);
     }
     public static void God()
     {
+        Random rnd = new Random();
+        int Namesi = rnd.Next(0, 40);
         string[] Names = { "MrMartinezCTC", "Mr. Luyk", "Aiden-clark-student", "alex-lawson-student", "Alvaro-Solis-Student", "Andrew-Abramajtys-Student", "Ben-Potgeter-student", "Benjamin-Altman", "caasebd-debug", "Caden-Beyer-Student", "daama6e-del", "Elijah L.", "Elijah-Young-Student", "Finn-McP", "Gabe", "Gabriel", "Garnold-Crump-Student", "Heath-Zylstra-Student", "izwi160-eng", "Jacob-Flores-Student", "josephheinz", "Fish", "judahhauch", "Keira-Carlson-Student", "Landon-Bolt-student", "Liam-Bowerman", "Logan-Stezowski-Student", "Lorilei-Forbear-Student", "lucas-raab-student", "Mason-Hart-Student", "nakn3eb", "Nuri-Banks-Student", "Owen-Downing-Student", "owtea4d-debug", "OwenTHEWALSH", "Ryan-Haug-Student", "sali012-pixel", "Thomas", "tyhad04-spec", "yos" };
+        MainMethod(Names, Namesi);
+
+
     }
 }
