@@ -47,6 +47,7 @@ public class Program
                 Console.WriteLine($"          =========");
             }
             char characterToFind = Console.ReadLine()[0];
+            Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
         }
     }
@@ -76,7 +77,7 @@ public class Program
             }
         }
         Thread.Sleep(1500);
-        Console.WriteLine($"1. Start Game");
+        Console.WriteLine($"1. Start Game                   Your score: {scoreCounter}");
         Console.WriteLine($"2. Instructions");
         Console.WriteLine($"3. Settings");
         Console.WriteLine($"4. Exit");
@@ -219,7 +220,7 @@ public class Program
     }
 
     //-----------------------------------------UI Systems Above 👆------------------------------------------------
-    
+
     public static void characterChecker(string name, char characterToFind)
     {
         bool foundChar = false;
@@ -232,6 +233,10 @@ public class Program
                 scoreCounter = scoreCounter + 200;
                 break;
             }
+        }
+        if(foundChar == false)
+        {
+            scoreCounter = scoreCounter - 100;
         }
         theHangman(foundChar);
     }
