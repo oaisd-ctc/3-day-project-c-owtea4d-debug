@@ -219,6 +219,7 @@ public class Program
         Console.Clear();
     }
 
+
     //-----------------------------------------UI Systems Above 👆------------------------------------------------
 
     public static void characterChecker(string name, char characterToFind)
@@ -242,6 +243,7 @@ public class Program
         displayRevealedChar();
 
         theHangman(foundChar);
+        GameWon();
     }
     public static void displayRevealedChar()
     {
@@ -251,8 +253,27 @@ public class Program
         {
             Console.Write(i  + " ");
         }
-
         Console.WriteLine();
+    }
+    public static void GameWon()
+    {
+       bool allRevealed = true;
+
+       foreach (char c in revealedChar)
+        {
+            if (c == '_')
+            {
+                allRevealed = false;
+                break;
+            }
+        }
+
+        if (allRevealed)
+        {
+            Console.WriteLine("Congrats you've won");
+            Console.WriteLine($"Final Score: {scoreCounter}");
+            Environment.Exit(0);
+        }
     }
     public static void theHangman(bool foundChar)
     {
@@ -423,6 +444,3 @@ public class Program
     }
     //-----------------------------------------Difficulty Systems Above 👆------------------------------------------------
 }
-
-}
-
