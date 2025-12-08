@@ -6,9 +6,8 @@ public class Program
     static int counter;
     static int scoreCounter;
     static char[] revealedChar;
+    public static string result = "abcdefghijklmnopqrstuvwxyz";
 
-    static string updatedABC;
-    //static string abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public static void Main(string[] args)
     {
@@ -16,10 +15,12 @@ public class Program
         if (randomNumberCounter == 1)
         {
             Noob();
+
         }
         if (randomNumberCounter == 2)
         {
             Pro();
+
         }
         if (randomNumberCounter == 3)
         {
@@ -39,7 +40,6 @@ public class Program
         Console.WriteLine($"              |");
         Console.WriteLine($"              |");
         Console.WriteLine($"          =========");
-
         revealedChar = new char[Names[Namesi].Length];
         for (int i = 0; i < revealedChar.Length; i++)
         {
@@ -216,33 +216,21 @@ public class Program
     }
 
     //-----------------------------------------UI Systems Above 👆------------------------------------------------
-    public static void systemABC(char letter, bool foundChar)
+    public static void systemABC(char letter)
     {
-        string abc = "abcdefghijklmnopqrstuvwxyz";
-        char[] l = abc.ToCharArray();
-        if (foundChar == true)
+        char[] l = result.ToCharArray();
+
+        for (int i = 0; i < l.Length; i++)
         {
-            for (int i = 0; i < abc.Length; i++)
+            if (l[i] == letter)
             {
-                if (l[i] == letter)
-                {
-                    l[i] = '_';
-                    break;
-                }
+                l[i] = '-';
+                break;
             }
         }
-        if (foundChar == false)
-        {
-            for (int i = 0; i < abc.Length; i++)
-            {
-                if (l[i] == letter)
-                {
-                    l[i] = 'X';
-                    break;
-                }
-            }
-        }
-        updatedABC = new string(abc);
+        result = new string(l);
+
+
     }
 
     public static void characterChecker(string name, char characterToFind)
@@ -257,11 +245,11 @@ public class Program
                 revealedChar[i] = characterToFind;
                 scoreCounter = scoreCounter + 200;
                 foundChar = true;
-                systemABC(characterToFind, foundChar);
+                systemABC(characterToFind);
             }
             if (name[i] != characterToFind)
             {
-                systemABC(characterToFind, foundChar);
+                systemABC(characterToFind);
             }
         }
 
@@ -414,6 +402,7 @@ public class Program
         }
         if (counter == 0)
         {
+
             Console.WriteLine($"          +---+");
             Console.WriteLine($"          |   |");
             Console.WriteLine($"              |");
@@ -421,9 +410,12 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 1)
         {
+
+
             Console.WriteLine($"          +---+");
             Console.WriteLine($"          |   |");
             Console.WriteLine($"          0   |");
@@ -431,9 +423,12 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 2)
         {
+
+
             Console.WriteLine($"          +---+");
             Console.WriteLine($"          |   |");
             Console.WriteLine($"          0   |");
@@ -441,9 +436,12 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 3)
         {
+
+
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
@@ -451,9 +449,12 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 4)
         {
+
+
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
@@ -461,9 +462,12 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 5)
         {
+
+
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
@@ -471,9 +475,11 @@ public class Program
             Console.WriteLine(@"         /    |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 6)
         {
+
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
@@ -481,6 +487,7 @@ public class Program
             Console.WriteLine(@"         / \  |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
+
 
             Thread.Sleep(1500);
             Console.Clear();
@@ -549,7 +556,6 @@ public class Program
         int Namesi = rnd.Next(0, 18);
         string[] Names = { "martinez", "luyk", "benjamin", "caden", "noah", "gabriel", "garnold", "izaac", "joseph", "judah", "keira", "lorilei", "lucas", "mason", "nuri", "owent", "owenw", "sage", "tyler" };
         noobmode();
-
         MainMethod(Names, Namesi);
     }
     public static void Pro()
