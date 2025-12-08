@@ -36,12 +36,13 @@ public class Program
         Console.WriteLine($"              |");
         Console.WriteLine($"              |");
         Console.WriteLine($"          =========");
+        systemABC();
         revealedChar = new char[Names[Namesi].Length];
         for (int i = 0; i < revealedChar.Length; i++)
         {
             revealedChar[i] = '_';
         }
-      
+
         while (true)
         {
             Console.WriteLine("Enter a letter to search for:");
@@ -49,6 +50,7 @@ public class Program
             Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
         }
+        
     }
 
 
@@ -211,18 +213,17 @@ public class Program
     }
 
     //-----------------------------------------UI Systems Above 👆------------------------------------------------
+    public static void systemABC()
+    {
+        
+    }
 
     public static void characterChecker(string name, char characterToFind)
     {
         bool foundChar = false;
-        
-        if ( characterToFind >= 2)
-            {
-                Console.WriteLine("Please enter 1 character at a time. try again.");
-                counter--;
-            }
-        
-        foreach (char letter in name)
+
+
+        for (int i = 0; i < name.Length; i++)
         {
             if (name[i] == characterToFind)
             {
@@ -232,13 +233,24 @@ public class Program
             }
         }
 
-        if(foundChar == false)
+        if (foundChar == false)
         {
             scoreCounter = scoreCounter - 100;
         }
         displayRevealedChar();
 
         theHangman(foundChar);
+    }
+    public static void displayRevealedChar()
+    {
+        Console.WriteLine();
+
+        foreach (char i in revealedChar)
+        {
+            Console.Write(i + " ");
+        }
+
+        Console.WriteLine();
     }
     public static void Startingup()
     {
@@ -497,7 +509,7 @@ public class Program
         }
 
     }
-    
+
     //-----------------------------------------Difficulty Systems Below 👇------------------------------------------------
     public static void Noob()
     {
@@ -536,5 +548,4 @@ public class Program
     //-----------------------------------------Difficulty Systems Above 👆------------------------------------------------
 }
 
-}
 
