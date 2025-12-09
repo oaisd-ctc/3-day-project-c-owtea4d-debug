@@ -6,6 +6,8 @@ public class Program
     static int counter;
     static int scoreCounter;
     static char[] revealedChar;
+    public static string result = "abcdefghijklmnopqrstuvwxyz";
+
 
     public static void Main(string[] args)
     {
@@ -13,10 +15,12 @@ public class Program
         if (randomNumberCounter == 1)
         {
             Noob();
+
         }
         if (randomNumberCounter == 2)
         {
             Pro();
+
         }
         if (randomNumberCounter == 3)
         {
@@ -36,7 +40,6 @@ public class Program
         Console.WriteLine($"              |");
         Console.WriteLine($"              |");
         Console.WriteLine($"          =========");
-        systemABC();
         revealedChar = new char[Names[Namesi].Length];
         for (int i = 0; i < revealedChar.Length; i++)
         {
@@ -50,7 +53,7 @@ public class Program
             Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
         }
-        
+
     }
 
 
@@ -214,9 +217,21 @@ public class Program
 
 
     //-----------------------------------------UI Systems Above 👆------------------------------------------------
-    public static void systemABC()
+    public static void systemABC(char letter)
     {
-        
+        char[] l = result.ToCharArray();
+
+        for (int i = 0; i < l.Length; i++)
+        {
+            if (l[i] == letter)
+            {
+                l[i] = '-';
+                break;
+            }
+        }
+        result = new string(l);
+
+
     }
 
     public static void characterChecker(string name, char characterToFind)
@@ -231,6 +246,11 @@ public class Program
                 revealedChar[i] = characterToFind;
                 scoreCounter = scoreCounter + 200;
                 foundChar = true;
+                systemABC(characterToFind);
+            }
+            if (name[i] != characterToFind)
+            {
+                systemABC(characterToFind);
             }
         }
 
@@ -281,6 +301,7 @@ public class Program
         }
         if (counter == 0)
         {
+
             Console.WriteLine($"          +---+");
             Console.WriteLine($"          |   |");
             Console.WriteLine($"              |");
@@ -288,9 +309,12 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 1)
         {
+
+
             Console.WriteLine($"          +---+");
             Console.WriteLine($"          |   |");
             Console.WriteLine($"          0   |");
@@ -298,9 +322,12 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 2)
         {
+
+
             Console.WriteLine($"          +---+");
             Console.WriteLine($"          |   |");
             Console.WriteLine($"          0   |");
@@ -308,9 +335,12 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 3)
         {
+
+
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
@@ -318,9 +348,12 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 4)
         {
+
+
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
@@ -328,9 +361,12 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 5)
         {
+
+
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
@@ -338,9 +374,11 @@ public class Program
             Console.WriteLine(@"         /    |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
+            Console.WriteLine(result);
         }
         else if (counter == 6)
         {
+
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
@@ -348,6 +386,7 @@ public class Program
             Console.WriteLine(@"         / \  |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
+
 
             Thread.Sleep(1500);
             Console.Clear();
