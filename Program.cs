@@ -288,9 +288,11 @@ public class Program
 
         if (allRevealed)
         {
+            Console.Clear();
             Console.WriteLine("Congrats you've won");
             Console.WriteLine($"Final Score: {scoreCounter}");
-            Environment.Exit(0);
+            Thread.Sleep(3000);
+            UISystem();
         }
     }
     public static void Startingup()
