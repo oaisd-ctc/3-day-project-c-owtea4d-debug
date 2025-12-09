@@ -183,6 +183,7 @@ public class Program
     }
     public static void gameStarting()
     {
+        counter=0;
         Console.Clear();
         Console.WriteLine("Select your difficulty");
         Console.WriteLine($"1. Noob - first names");
