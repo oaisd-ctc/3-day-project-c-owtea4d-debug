@@ -293,6 +293,128 @@ public class Program
             Environment.Exit(0);
         }
     }
+    public static void Startingup()
+    {
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 5 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 4 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 3 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 2 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 1 second to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("Game Is Starting");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Console.Clear();
+    }
+    public static void noobmode()
+    {
+        Console.Clear();
+        Console.WriteLine("Aw you choose noob mode how completely ok of you to do so I dont blame you the other modes is scary 🥶.");
+        Thread.Sleep(2000);
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 5 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 4 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 3 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 2 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 1 second to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("Game Is Starting");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Console.Clear();
+        Console.WriteLine("Oh one more thing before you start. The Owens, since they have the same name, have their last initial right after their name. no spaces. ex: 'owent' 'owenw'");
+        Console.WriteLine("Ill give you 10 more seconds to prepare");
+        Thread.Sleep(10000);
+        Console.Clear();
+    }
+    public static void godmode()
+    {
+        Console.Clear();
+        Console.WriteLine("HOLY GUACAMOLE YOU PICKED GOD MODE1!11!!11!😱😱😱😲😲😲🤯🤯🤯 YOU MUST BE SMART");
+        Thread.Sleep(2000);
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 5 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 4 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 3 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 2 seconds to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("PLEASE NOTE!!!");
+        Console.WriteLine("If you type anything other than a letter or a '-' it will be marked as incorrect and you will be punished for it. you have been warned.");
+        Console.WriteLine("You have 1 second to prepare.");
+        Thread.Sleep(1000);
+        Console.Clear();
+        Console.Write("Game Is Starting");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Thread.Sleep(300);
+        Console.Write(".");
+        Console.Clear();
+        Console.WriteLine("Good luck, you're gonna need it broski🤞");
+        Thread.Sleep(4000);
+        Console.Clear();
+    }
     public static void theHangman(bool foundChar)
     {
         if (!foundChar)
