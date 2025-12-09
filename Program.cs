@@ -1,10 +1,11 @@
 using System;
 public class Program
 {
-
+    static int globalNameLength;
     static int randomNumberCounter;
     static int counter;
     static int scoreCounter;
+    static bool Loser;
     static char[] revealedChar;
     public static string result = "abcdefghijklmnopqrstuvwxyz";
 
@@ -33,6 +34,7 @@ public class Program
     }
     public static void MainMethod(string[] Names, int Namesi)
     {
+
         Console.WriteLine($"          +---+");
         Console.WriteLine($"          |   |");
         Console.WriteLine($"              |");
@@ -45,7 +47,7 @@ public class Program
         {
             revealedChar[i] = '_';
         }
-
+        globalNameLength = revealedChar.Length;
         while (true)
         {
             Console.WriteLine("Enter a letter to search for:");
@@ -235,6 +237,17 @@ public class Program
 
     }
 
+    public static void scoreSystem(bool W)
+    {
+        if (W == true)
+        {
+            scoreCounter = scoreCounter + (200 * globalNameLength);
+        }
+        if(Loser == true)
+        {
+           scoreCounter = scoreCounter + (100 * globalNameLength); 
+        }
+    }
     public static void characterChecker(string name, char characterToFind)
     {
         bool foundChar = false;
@@ -245,7 +258,6 @@ public class Program
             if (name[i] == characterToFind)
             {
                 revealedChar[i] = characterToFind;
-                scoreCounter = scoreCounter + 200;
                 foundChar = true;
                 systemABC(characterToFind);
             }
@@ -257,7 +269,7 @@ public class Program
 
         if (foundChar == false)
         {
-            scoreCounter = scoreCounter - 100;
+
         }
         displayRevealedChar();
 
@@ -276,9 +288,9 @@ public class Program
     }
     public static void GameWon()
     {
-       bool allRevealed = true;
-
-       foreach (char c in revealedChar)
+        bool allRevealed = true;
+        
+        foreach (char c in revealedChar)
         {
             if (c == '_')
             {
@@ -290,6 +302,7 @@ public class Program
         if (allRevealed)
         {
             Console.Clear();
+            scoreSystem(allRevealed);
             Console.WriteLine("Congrats you've won");
             Console.WriteLine($"Final Score: {scoreCounter}");
             Thread.Sleep(3000);
@@ -503,7 +516,7 @@ public class Program
         }
         else if (counter == 6)
         {
-
+            Loser = true;
             Console.WriteLine(@"          +---+");
             Console.WriteLine(@"          |   |");
             Console.WriteLine(@"          0   |");
