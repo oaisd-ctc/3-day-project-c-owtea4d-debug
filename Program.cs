@@ -134,7 +134,7 @@ public class Program
         Console.WriteLine("How to Enter Guesses");
         Console.WriteLine("Enter one letter at a time");
         Console.WriteLine("Letters must be alphabetic(A-Z).");
-        Console.WriteLine("Case does not matter.");
+        Console.WriteLine("Capitalization does matter.");
         Console.WriteLine("How Mistakes Work");
         Console.WriteLine("You have 6 lives");
         Console.WriteLine("Each incorrect guess removes one life.");
@@ -371,7 +371,7 @@ public class Program
         Console.Write(".");
         Console.Clear();
         Console.WriteLine("Good luck, you're gonna need it broski🤞");
-        Thread.Sleep(4000);
+        Thread.Sleep(3000);
         Console.Clear();
     }
     public static void theHangman(bool foundChar)
