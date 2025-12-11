@@ -52,6 +52,7 @@ public class Program
         {
             Console.WriteLine("Enter a letter to search for:");
             char characterToFind = Console.ReadLine()[0];
+            Console.Clear();
             Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
         }
