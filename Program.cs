@@ -34,6 +34,7 @@ public class Program
     }
     public static void MainMethod(string[] Names, int Namesi)
     {
+
         Console.WriteLine($"          +---+");
         Console.WriteLine($"          |   |");
         Console.WriteLine($"              |");
@@ -51,16 +52,9 @@ public class Program
         {
             Console.WriteLine("Enter a letter to search for:");
             char characterToFind = Console.ReadLine()[0];
-            Thread.Sleep(250);
-            Console.Clear();
             Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
-            if (characterToFind == '0')
-            {
-                Environment.Exit(0);
-            }
         }
-
 
     }
 
@@ -134,7 +128,39 @@ public class Program
     }
     public static void gameSettings()
     {
-
+        Console.WriteLine("there are no settings. but say hi to shrek while your here!");
+                Console.WriteLine("⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+                Console.WriteLine("⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ ");
+                Console.WriteLine("⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ ");
+                Console.WriteLine("⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉");
+                Console.WriteLine("Let me know when your ready to return, type 'Ready'");
+        while (true)
+        {
+            string returnToUI = Console.ReadLine().ToLower();
+            if (returnToUI == "ready")
+            {
+                UISystem();
+            }
+            Console.Write("idc what you typed.");
+            Thread.Sleep(500);
+            Console.Write(" .");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.WriteLine();
+            UISystem();
+        }
     }
     public static void gameInstructions()
     {
@@ -191,7 +217,7 @@ public class Program
     }
     public static void gameStarting()
     {
-        counter = 0;
+        counter=0;
         Console.Clear();
         Console.WriteLine("Select your difficulty");
         Console.WriteLine($"1. Noob - first names");
@@ -239,6 +265,8 @@ public class Program
             }
         }
         result = new string(l);
+
+
     }
 
     public static void scoreSystem(bool W)
@@ -247,9 +275,9 @@ public class Program
         {
             scoreCounter = scoreCounter + (200 * globalNameLength);
         }
-        if (Loser == true)
+        if(Loser == true)
         {
-            scoreCounter = scoreCounter + (100 * globalNameLength);
+           scoreCounter = scoreCounter + (100 * globalNameLength); 
         }
     }
     public static void characterChecker(string name, char characterToFind)
@@ -293,7 +321,7 @@ public class Program
     public static void GameWon()
     {
         bool allRevealed = true;
-
+        
         foreach (char c in revealedChar)
         {
             if (c == '_')
@@ -305,7 +333,6 @@ public class Program
 
         if (allRevealed)
         {
-            result = "abcdefghijklmnopqrstuvwxyz";
             Console.Clear();
             scoreSystem(allRevealed);
             Console.WriteLine("Congrats you've won");
@@ -381,6 +408,10 @@ public class Program
         Console.WriteLine("You have 1 second to prepare.");
         Thread.Sleep(1000);
         Console.Clear();
+        Console.WriteLine("Oh one more thing before you start. The Owens, since they have the same name, have their last initial right after their name. no spaces. ex: 'owent' 'owenw'");
+        Console.WriteLine("Ill give you 10 more seconds to prepare");
+        Thread.Sleep(10000);
+        Console.Clear();
         Console.Write("Game Is Starting");
         Thread.Sleep(300);
         Console.Write(".");
@@ -389,10 +420,7 @@ public class Program
         Thread.Sleep(300);
         Console.Write(".");
         Console.Clear();
-        Console.WriteLine("Oh one more thing before you start. The Owens, since they have the same name, have their last initial right after their name. no spaces. ex: 'owent' 'owenw'");
-        Console.WriteLine("Ill give you 10 more seconds to prepare");
-        Thread.Sleep(10000);
-        Console.Clear();
+        
     }
     public static void godmode()
     {
@@ -438,7 +466,6 @@ public class Program
     }
     public static void theHangman(bool foundChar)
     {
-
         if (!foundChar)
         {
             counter++;
@@ -454,7 +481,6 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
             Console.WriteLine(result);
-
         }
         else if (counter == 1)
         {
@@ -468,7 +494,6 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
             Console.WriteLine(result);
-
         }
         else if (counter == 2)
         {
@@ -495,7 +520,6 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
             Console.WriteLine(result);
-            Thread.Sleep(2000);
         }
         else if (counter == 4)
         {
@@ -533,7 +557,7 @@ public class Program
             Console.WriteLine(@"         / \  |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
-            result = "abcdefghijklmnopqrstuvwxyz";
+
 
             Thread.Sleep(1500);
             Console.Clear();
@@ -582,6 +606,27 @@ public class Program
                 Console.WriteLine("ngl");
                 Thread.Sleep(900);
                 Console.WriteLine("tbh");
+                Thread.Sleep(900);
+                Console.Clear();
+                Console.WriteLine("Shrek");
+                Thread.Sleep(1100);
+                Console.WriteLine("the inspiration behind it all");
+                Thread.Sleep(900);
+                Console.WriteLine("⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+                Console.WriteLine("⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ ");
+                Console.WriteLine("⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ ");
+                Console.WriteLine("⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
+                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉");
                 Thread.Sleep(900);
                 Console.Clear();
                 UISystem();
