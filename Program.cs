@@ -34,7 +34,6 @@ public class Program
     }
     public static void MainMethod(string[] Names, int Namesi)
     {
-
         Console.WriteLine($"          +---+");
         Console.WriteLine($"          |   |");
         Console.WriteLine($"              |");
@@ -47,6 +46,8 @@ public class Program
         {
             revealedChar[i] = '_';
         }
+        Thread.Sleep(1000);
+        Console.Clear();
         globalNameLength = revealedChar.Length;
         while (true)
         {
@@ -54,7 +55,12 @@ public class Program
             char characterToFind = Console.ReadLine()[0];
             Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
+            if (characterToFind == '0')
+            {
+                Environment.Exit(0);
+            }
         }
+
 
     }
 
@@ -185,7 +191,7 @@ public class Program
     }
     public static void gameStarting()
     {
-        counter=0;
+        counter = 0;
         Console.Clear();
         Console.WriteLine("Select your difficulty");
         Console.WriteLine($"1. Noob - first names");
@@ -233,8 +239,6 @@ public class Program
             }
         }
         result = new string(l);
-
-
     }
 
     public static void scoreSystem(bool W)
@@ -243,9 +247,9 @@ public class Program
         {
             scoreCounter = scoreCounter + (200 * globalNameLength);
         }
-        if(Loser == true)
+        if (Loser == true)
         {
-           scoreCounter = scoreCounter + (100 * globalNameLength); 
+            scoreCounter = scoreCounter + (100 * globalNameLength);
         }
     }
     public static void characterChecker(string name, char characterToFind)
@@ -289,7 +293,7 @@ public class Program
     public static void GameWon()
     {
         bool allRevealed = true;
-        
+
         foreach (char c in revealedChar)
         {
             if (c == '_')
@@ -301,6 +305,7 @@ public class Program
 
         if (allRevealed)
         {
+            result = "abcdefghijklmnopqrstuvwxyz";
             Console.Clear();
             scoreSystem(allRevealed);
             Console.WriteLine("Congrats you've won");
@@ -433,6 +438,7 @@ public class Program
     }
     public static void theHangman(bool foundChar)
     {
+
         if (!foundChar)
         {
             counter++;
@@ -448,6 +454,7 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
             Console.WriteLine(result);
+
         }
         else if (counter == 1)
         {
@@ -461,6 +468,7 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
             Console.WriteLine(result);
+
         }
         else if (counter == 2)
         {
@@ -487,6 +495,7 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
             Console.WriteLine(result);
+            Thread.Sleep(2000);
         }
         else if (counter == 4)
         {
@@ -524,7 +533,7 @@ public class Program
             Console.WriteLine(@"         / \  |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
-
+            result = "abcdefghijklmnopqrstuvwxyz";
 
             Thread.Sleep(1500);
             Console.Clear();
