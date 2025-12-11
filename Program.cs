@@ -334,6 +334,7 @@ public class Program
 
         if (allRevealed)
         {
+            result = "abcdefghijklmnopqrstuvwxyz";
             Console.Clear();
             scoreSystem(allRevealed);
             Console.WriteLine("Congrats you've won");
@@ -559,7 +560,7 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
 
-
+            result = "abcdefghijklmnopqrstuvwxyz";
             Thread.Sleep(1500);
             Console.Clear();
             Console.Write(".");
