@@ -46,13 +46,13 @@ public class Program
         {
             revealedChar[i] = '_';
         }
-        Thread.Sleep(1000);
-        Console.Clear();
         globalNameLength = revealedChar.Length;
         while (true)
         {
             Console.WriteLine("Enter a letter to search for:");
             char characterToFind = Console.ReadLine()[0];
+            Thread.Sleep(250);
+            Console.Clear();
             Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
             if (characterToFind == '0')
