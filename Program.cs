@@ -31,6 +31,14 @@ public class Program
         {
             God();
         }
+        if (randomNumberCounter == 5)
+        {
+            Food();
+        }
+        if (randomNumberCounter == 6)
+        {
+            RandomWords();
+        }
     }
     public static void MainMethod(string[] Names, int Namesi)
     {
@@ -130,22 +138,22 @@ public class Program
     public static void gameSettings()
     {
         Console.WriteLine("there are no settings. but say hi to shrek while your here!");
-                Console.WriteLine("⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-                Console.WriteLine("⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ ");
-                Console.WriteLine("⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ ");
-                Console.WriteLine("⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
-                Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉");
-                Console.WriteLine("Let me know when your ready to return, type 'Ready'");
+        Console.WriteLine("⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+        Console.WriteLine("⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ ");
+        Console.WriteLine("⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ ");
+        Console.WriteLine("⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
+        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉");
+        Console.WriteLine("Let me know when your ready to return, type 'Ready'");
         while (true)
         {
             string returnToUI = Console.ReadLine().ToLower();
@@ -218,13 +226,15 @@ public class Program
     }
     public static void gameStarting()
     {
-        counter=0;
+        counter = 0;
         Console.Clear();
         Console.WriteLine("Select your difficulty");
         Console.WriteLine($"1. Noob - first names");
         Console.WriteLine($"2. Pro - first and last names with capitialization");
-        Console.WriteLine($"3. Hacker - github users");
-        Console.WriteLine($"4. God - am and pm github users");
+        Console.WriteLine($"3. Hacker - github users (CASE SENSITIVE)");
+        Console.WriteLine($"4. God - am and pm github users (CASE SENSITIVE)");
+        Console.WriteLine($"5. Food - this is a list of 40 different foods (CASE SENSITIVE)");
+        Console.WriteLine($"6. Encyclopedia - this has 40 different words from the encyclopedia (CASE SENSITIVE)");
         string DifficultyInput = Console.ReadLine();
         Console.Clear();
         int IntConversion = 0;
@@ -249,11 +259,22 @@ public class Program
             God();
             randomNumberCounter = 4;
         }
+        if (IntConversion == 5)
+        {
+            Food();
+            randomNumberCounter = 5;
+        }
+        if (IntConversion == 6)
+        {
+            RandomWords();
+            randomNumberCounter = 6;
+        }
+
     }
 
 
     //-----------------------------------------UI Systems Above 👆------------------------------------------------
-    public static void systemABC(char letter)
+    public static void systemABC(char letter, bool foundChar)
     {
         char[] l = result.ToCharArray();
 
@@ -261,8 +282,16 @@ public class Program
         {
             if (l[i] == letter)
             {
-                l[i] = '-';
-                break;
+                if (foundChar == true)
+                {
+                    l[i] = '✔';
+                    break;
+                }
+                if (foundChar == false)
+                {
+                    l[i] = '/';
+                    break;
+                }
             }
         }
         result = new string(l);
@@ -276,9 +305,9 @@ public class Program
         {
             scoreCounter = scoreCounter + (200 * globalNameLength);
         }
-        if(Loser == true)
+        if (Loser == true)
         {
-           scoreCounter = scoreCounter + (100 * globalNameLength); 
+            scoreCounter = scoreCounter + (100 * globalNameLength);
         }
     }
     public static void characterChecker(string name, char characterToFind)
@@ -292,17 +321,17 @@ public class Program
             {
                 revealedChar[i] = characterToFind;
                 foundChar = true;
-                systemABC(characterToFind);
+                systemABC(characterToFind, foundChar);
             }
-            if (name[i] != characterToFind)
+            /*if (name[i] != characterToFind)
             {
-                systemABC(characterToFind);
-            }
+                systemABC(characterToFind, foundChar);
+            }*/
         }
 
         if (foundChar == false)
         {
-
+            systemABC(characterToFind, foundChar);
         }
         displayRevealedChar();
 
@@ -322,7 +351,7 @@ public class Program
     public static void GameWon()
     {
         bool allRevealed = true;
-        
+
         foreach (char c in revealedChar)
         {
             if (c == '_')
@@ -334,6 +363,13 @@ public class Program
 
         if (allRevealed)
         {
+            Thread.Sleep(1250);
+            Console.Write(".");
+            Thread.Sleep(1250);
+            Console.Write(".");
+            Thread.Sleep(1250);
+            Console.Write(".");
+            Thread.Sleep(1250);
             result = "abcdefghijklmnopqrstuvwxyz";
             Console.Clear();
             scoreSystem(allRevealed);
@@ -422,7 +458,7 @@ public class Program
         Thread.Sleep(300);
         Console.Write(".");
         Console.Clear();
-        
+
     }
     public static void godmode()
     {
@@ -676,6 +712,22 @@ public class Program
         MainMethod(Names, Namesi);
 
 
+    }
+    public static void Food()
+    {
+        Random rnd = new Random();
+        int Namesi = rnd.Next(0, 40);
+        string[] Names = { "Pizza", "Burger", "Pasta", "Sushi", "Tacos", "Sandwich", "Salad", "Steak", "Chicken", "Rice", "Noodles", "Soup", "Fries", "Hot Dog", "Pancakes", "Waffles", "Ice Cream", "Cake", "Donuts", "Cookies", "Chocolate", "Apple", "Banana", "Orange", "Strawberries", "Grapes", "Cheese", "Eggs", "Bacon", "Sausage", "Fish", "Shrimp", "Pizza Rolls", "Nachos", "Popcorn", "Cereal", "Yogurt", "Oatmeal", "Peanut Butter", "Jelly" };
+        Startingup();
+        MainMethod(Names, Namesi);
+    }
+    public static void RandomWords()
+    {
+        Random rnd = new Random();
+        int Namesi = rnd.Next(0, 40);
+        string[] Names = { "Atom", "Galaxy", "Democracy", "Photosynthesis", "Volcano", "Algorithm", "Mythology", "Ecosystem", "Gravity", "Renaissance", "Quantum", "Bacteria", "Civilization", "Architecture", "Philosophy", "Meteorology", "Evolution", "Astronomy", "Linguistics", "Geography", "Archaeology", "Economics", "Psychology", "Mathematics", "Engineering", "Navigation", "Electricity", "Magnetism", "Anthropology", "Genetics", "Cartography", "Oceanography", "Cryptography", "Thermodynamics", "Optics", "Acoustics", "Topology", "Nanotechnology", "Ecology", "Sociology" };
+        Startingup();
+        MainMethod(Names, Namesi);
     }
     //-----------------------------------------Difficulty Systems Above 👆------------------------------------------------
 }
