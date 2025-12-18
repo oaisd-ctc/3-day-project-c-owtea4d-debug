@@ -71,18 +71,18 @@ public class Program
     //-----------------------------------------UI Systems Below 👇------------------------------------------------
     public static void UISystem()
     {
+        Console.Clear();
+        Thread.Sleep(4000);
         for (int i = 1; i <= 11; i++)
         {
             if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11)
             {
-                Thread.Sleep(500);
-                Console.SetCursorPosition(Console.WindowWidth / 2, 0);
-                Console.WriteLine(@"
-                -------------------------------------------------------------------------------
-                -------------------------------------------------------------------------------
-                -------------------------------------------------------------------------------
-                ");
-                Console.SetCursorPosition(Console.WindowWidth / 2, 10);
+
+                Console.SetCursorPosition(15, 0);
+                Console.WriteLine("--------------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------------");
+
                 Console.WriteLine(@"
                  ____  _____  ______ _____         _______ _____  ____  _   _    
                / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
@@ -97,19 +97,18 @@ public class Program
                   | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
                   |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
             ");
-                Console.SetCursorPosition(Console.WindowWidth / 2, 20);
-                Console.WriteLine(@"
-                -------------------------------------------------------------------------------
-                -------------------------------------------------------------------------------
-                -------------------------------------------------------------------------------
-                ");
+
+                Console.WriteLine("--------------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------------");
+                Thread.Sleep(300);
                 Console.Clear();
             }
             if (i == 2 || i == 4 || i == 6 || i == 8 || i == 10)
             {
-                Console.SetCursorPosition(Console.WindowWidth / 2, 0);
+                Console.SetCursorPosition(15, 0);
                 Console.WriteLine();
-                Console.SetCursorPosition(Console.WindowWidth / 2, 10);
+
                 Console.WriteLine(@"
                  ____  _____  ______ _____         _______ _____  ____  _   _    
                / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
@@ -124,9 +123,9 @@ public class Program
                   | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
                   |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
             ");
-                Console.SetCursorPosition(Console.WindowWidth / 2, 20);
+
                 Console.WriteLine();
-                Thread.Sleep(500);
+                Thread.Sleep(300);
                 Console.Clear();
             }
         }
