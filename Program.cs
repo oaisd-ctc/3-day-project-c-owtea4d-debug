@@ -85,7 +85,7 @@ public class Program
                 Console.SetCursorPosition(50, 2);
                 Console.WriteLine(" ██████████████████████████████████████████████████████████████");
                 Console.SetCursorPosition(50, 3);
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(@"
                                                     ____  _____  ______ _____         _______ _____  ____  _   _    
                                                     / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
@@ -112,6 +112,7 @@ public class Program
             }
             if (i == 2 || i == 5 || i == 8 || i == 11)
             {
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 1);
                 Console.WriteLine(" ██████████████████████████████████████████████████████████████");
                 Console.SetCursorPosition(50, 2);
@@ -132,6 +133,7 @@ public class Program
                                                         | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
                                                         |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
             ");
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 18);
                 Console.WriteLine(" ██████████████████████████████████████████████████████████████");
                 Console.SetCursorPosition(50, 19);
@@ -141,8 +143,9 @@ public class Program
             }
             if (i == 3 || i == 6 || i == 9 || i == 12)
             {
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 2);
-                Console.WriteLine(" ██████████████████████████████████████████████████████████████");               
+                Console.WriteLine(" ██████████████████████████████████████████████████████████████");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.SetCursorPosition(50, 3);
                 Console.WriteLine(@"
@@ -159,22 +162,38 @@ public class Program
                                                         | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
                                                         |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
             ");
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 18);
                 Console.WriteLine(" ██████████████████████████████████████████████████████████████");
-
                 Thread.Sleep(500);
                 Console.Clear();
+                Console.WriteLine(@"
+                                                    ____  _____  ______ _____         _______ _____  ____  _   _    
+                                                    / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
+                                                    | |  | | |__) | |__  | |__) |   /  \  | |    | || |  ||  \| |
+                                                    | |  | |  ___/|  __| |  _  /   / /\ \ | |    | || |  || . ` |  
+                                                    | |__| | |    | |____| | \ \  / ____ \| |   _| || |__|| |\  |  
+                                                    \____/|_|    |______|_|  \_\/_/    \_\_|  |_____\____/|_| \_| 
+                                                        _    _          _   _  _____ __  __          _   _    
+                                                        | |  | |   /\   | \ | |/ ____|  \/  |   /\   | \ | |   
+                                                        | |__| |  /  \  |  \| | |  __| \  / |  /  \  |  \| |   
+                                                        |  __  | / /\ \ | . ` | | |_ | |\/| | / /\ \ | . ` |   
+                                                        | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
+                                                        |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
+            ");  
+            Thread.Sleep(500);
+            Console.Clear();              
             }
             if (i == 13)
             {
-                Console.Clear();
-                for(int ii = 0; ii < 3; ii++)
+                for (int n = 0; n < 3; n++)
                 {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.SetCursorPosition(50, 10);
+                    Console.WriteLine(" ██████████████████████████████████████████████████████████████");
                     Console.SetCursorPosition(50, 11);
                     Console.WriteLine(" ██████████████████████████████████████████████████████████████");
                     Console.SetCursorPosition(50, 12);
-                    Console.WriteLine(" ██████████████████████████████████████████████████████████████");
-                    Console.SetCursorPosition(50, 13);
                     Console.WriteLine(" ██████████████████████████████████████████████████████████████");
                     Thread.Sleep(300);
                     Console.Clear();
