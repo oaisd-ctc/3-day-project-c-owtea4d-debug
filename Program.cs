@@ -289,7 +289,7 @@ public class Program
                 }
                 if (foundChar == false)
                 {
-                    l[i] = '/';
+                    l[i] = '✗';
                     break;
                 }
             }
@@ -376,6 +376,7 @@ public class Program
             Console.WriteLine("Congrats you've won");
             Console.WriteLine($"Final Score: {scoreCounter}");
             Thread.Sleep(3000);
+            Console.Clear();
             UISystem();
         }
     }
