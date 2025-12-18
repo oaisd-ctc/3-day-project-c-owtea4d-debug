@@ -78,10 +78,13 @@ public class Program
             if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11)
             {
 
-                Console.SetCursorPosition(15, 0);
+                Console.SetCursorPosition(30, 0);
                 Console.WriteLine("--------------------------------------------------------------");
+                Console.SetCursorPosition(30, 1);
                 Console.WriteLine("--------------------------------------------------------------");
+                Console.SetCursorPosition(30, 2);
                 Console.WriteLine("--------------------------------------------------------------");
+                Console.SetCursorPosition(40, 3);
 
                 Console.WriteLine(@"
                  ____  _____  ______ _____         _______ _____  ____  _   _    
@@ -97,18 +100,18 @@ public class Program
                   | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
                   |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
             ");
-
+                Console.SetCursorPosition(30, 18);
                 Console.WriteLine("--------------------------------------------------------------");
+                Console.SetCursorPosition(30, 19);
                 Console.WriteLine("--------------------------------------------------------------");
+                Console.SetCursorPosition(30, 20);
                 Console.WriteLine("--------------------------------------------------------------");
                 Thread.Sleep(300);
                 Console.Clear();
             }
             if (i == 2 || i == 4 || i == 6 || i == 8 || i == 10)
             {
-                Console.SetCursorPosition(15, 0);
-                Console.WriteLine();
-
+                Console.SetCursorPosition(40, 3);
                 Console.WriteLine(@"
                  ____  _____  ______ _____         _______ _____  ____  _   _    
                / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
@@ -124,7 +127,6 @@ public class Program
                   |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
             ");
 
-                Console.WriteLine();
                 Thread.Sleep(300);
                 Console.Clear();
             }
