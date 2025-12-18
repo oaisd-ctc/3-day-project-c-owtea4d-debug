@@ -75,22 +75,62 @@ public class Program
         {
             if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11)
             {
-                Console.WriteLine("========================");
-                Console.WriteLine("   OPERATION HANGMAN");
-                Console.WriteLine("========================");
                 Thread.Sleep(500);
+                Console.SetCursorPosition(Console.WindowWidth / 2, 0);
+                Console.WriteLine(@"
+                -------------------------------------------------------------------------------
+                -------------------------------------------------------------------------------
+                -------------------------------------------------------------------------------
+                ");
+                Console.SetCursorPosition(Console.WindowWidth / 2, 10);
+                Console.WriteLine(@"
+                 ____  _____  ______ _____         _______ _____  ____  _   _    
+               / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
+               | |  | | |__) | |__  | |__) |   /  \  | |    | || |  ||  \| |
+               | |  | |  ___/|  __| |  _  /   / /\ \ | |    | || |  || . ` |  
+               | |__| | |    | |____| | \ \  / ____ \| |   _| || |__|| |\  |  
+               \____/|_|    |______|_|  \_\/_/    \_\_|  |_____\____/|_| \_| 
+                 _    _          _   _  _____ __  __          _   _    
+                  | |  | |   /\   | \ | |/ ____|  \/  |   /\   | \ | |   
+                  | |__| |  /  \  |  \| | |  __| \  / |  /  \  |  \| |   
+                  |  __  | / /\ \ | . ` | | |_ | |\/| | / /\ \ | . ` |   
+                  | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
+                  |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
+            ");
+                Console.SetCursorPosition(Console.WindowWidth / 2, 20);
+                Console.WriteLine(@"
+                -------------------------------------------------------------------------------
+                -------------------------------------------------------------------------------
+                -------------------------------------------------------------------------------
+                ");
                 Console.Clear();
             }
             if (i == 2 || i == 4 || i == 6 || i == 8 || i == 10)
             {
-
+                Console.SetCursorPosition(Console.WindowWidth / 2, 0);
                 Console.WriteLine();
-                Console.WriteLine("   OPERATION HANGMAN");
+                Console.SetCursorPosition(Console.WindowWidth / 2, 10);
+                Console.WriteLine(@"
+                 ____  _____  ______ _____         _______ _____  ____  _   _    
+               / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
+               | |  | | |__) | |__  | |__) |   /  \  | |    | || |  ||  \| |
+               | |  | |  ___/|  __| |  _  /   / /\ \ | |    | || |  || . ` |  
+               | |__| | |    | |____| | \ \  / ____ \| |   _| || |__|| |\  |  
+               \____/|_|    |______|_|  \_\/_/    \_\_|  |_____\____/|_| \_| 
+                 _    _          _   _  _____ __  __          _   _    
+                  | |  | |   /\   | \ | |/ ____|  \/  |   /\   | \ | |   
+                  | |__| |  /  \  |  \| | |  __| \  / |  /  \  |  \| |   
+                  |  __  | / /\ \ | . ` | | |_ | |\/| | / /\ \ | . ` |   
+                  | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
+                  |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
+            ");
+                Console.SetCursorPosition(Console.WindowWidth / 2, 20);
                 Console.WriteLine();
                 Thread.Sleep(500);
                 Console.Clear();
             }
         }
+        Console.SetCursorPosition(0, 0);
         Thread.Sleep(1500);
         Console.WriteLine($"1. Start Game                   Your score: {scoreCounter}");
         Console.WriteLine($"2. Instructions");
@@ -289,7 +329,7 @@ public class Program
                 }
                 if (foundChar == false)
                 {
-                    l[i] = '✗';
+                    l[i] = '✘';
                     break;
                 }
             }
@@ -323,10 +363,6 @@ public class Program
                 foundChar = true;
                 systemABC(characterToFind, foundChar);
             }
-            /*if (name[i] != characterToFind)
-            {
-                systemABC(characterToFind, foundChar);
-            }*/
         }
 
         if (foundChar == false)
@@ -370,7 +406,7 @@ public class Program
             Thread.Sleep(1250);
             Console.Write(".");
             Thread.Sleep(1250);
-            result = "abcdefghijklmnopqrstuvwxyz";
+            result = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             Console.Clear();
             scoreSystem(allRevealed);
             Console.WriteLine("Congrats you've won");
