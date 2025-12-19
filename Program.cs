@@ -114,9 +114,9 @@ public class Program
             {
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 1);
-                Console.WriteLine(" ██████████████████████████████████████████████████████████████");
+                Console.WriteLine("            ███████████████████████████████████████            ");
                 Console.SetCursorPosition(50, 2);
-                Console.WriteLine(" ██████████████████████████████████████████████████████████████");
+                Console.WriteLine("            ███████████████████████████████████████            ");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.SetCursorPosition(50, 3);
                 Console.WriteLine(@"
@@ -135,9 +135,9 @@ public class Program
             ");
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 18);
-                Console.WriteLine(" ██████████████████████████████████████████████████████████████");
+                Console.WriteLine("            ███████████████████████████████████████            ");
                 Console.SetCursorPosition(50, 19);
-                Console.WriteLine(" ██████████████████████████████████████████████████████████████");
+                Console.WriteLine("            ███████████████████████████████████████            ");
                 Thread.Sleep(500);
                 Console.Clear();
             }
@@ -145,7 +145,7 @@ public class Program
             {
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 2);
-                Console.WriteLine(" ██████████████████████████████████████████████████████████████");
+                Console.WriteLine("                      ██████████████████                       ");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.SetCursorPosition(50, 3);
                 Console.WriteLine(@"
@@ -164,10 +164,13 @@ public class Program
             ");
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 18);
-                Console.WriteLine(" ██████████████████████████████████████████████████████████████");
+                Console.WriteLine("                      ██████████████████                       ");
                 Thread.Sleep(500);
                 Console.Clear();
                 Console.WriteLine(@"
+
+
+
                                                     ____  _____  ______ _____         _______ _____  ____  _   _    
                                                     / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
                                                     | |  | | |__) | |__  | |__) |   /  \  | |    | || |  ||  \| |
@@ -180,9 +183,9 @@ public class Program
                                                         |  __  | / /\ \ | . ` | | |_ | |\/| | / /\ \ | . ` |   
                                                         | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
                                                         |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
-            ");  
-            Thread.Sleep(500);
-            Console.Clear();              
+            ");
+                Thread.Sleep(500);
+                Console.Clear();
             }
             if (i == 13)
             {
@@ -195,7 +198,15 @@ public class Program
                     Console.WriteLine(" ██████████████████████████████████████████████████████████████");
                     Console.SetCursorPosition(50, 12);
                     Console.WriteLine(" ██████████████████████████████████████████████████████████████");
-                    Thread.Sleep(300);
+                    Thread.Sleep(400);
+                    Console.Clear();
+                    Console.SetCursorPosition(50, 11);
+                    Console.WriteLine(" ");
+                    Console.SetCursorPosition(50, 11);
+                    Console.WriteLine(" ");
+                    Console.SetCursorPosition(50, 12);
+                    Console.WriteLine(" ");
+                    Thread.Sleep(400);
                     Console.Clear();
                 }
             }
@@ -284,6 +295,7 @@ public class Program
     }
     public static void gameInstructions()
     {
+        Console.Clear();
         Console.WriteLine("Purpose of the Game:");
         Console.WriteLine("Guess the hidden word by choosing letters.");
         Console.WriteLine("Each incorrect guess costs you a life.");
