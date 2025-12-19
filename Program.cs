@@ -9,9 +9,10 @@ public class Program
     static char[] revealedChar;
     public static string result = "abcdefghijklmnopqrstuvwxyz";
 
-
+//--------------------------------------------------Mains👇-------------------------------------------------------
     public static void Main(string[] args)
     {
+        titleScreen();
         UISystem();
         if (randomNumberCounter == 1)
         {
@@ -69,7 +70,7 @@ public class Program
 
 
     //-----------------------------------------UI Systems Below 👇------------------------------------------------
-    public static void UISystem()
+    public static void titleScreen()
     {
         Console.Clear();
         Thread.Sleep(1);
@@ -190,7 +191,8 @@ public class Program
             if (i == 13)
             {
                 string q = " █";
-                
+
+
                 for (int n = 0; n <= 20; n++)
                 {
                     Console.Write(q);
@@ -198,39 +200,34 @@ public class Program
                     if (n == 20)
                     {
                         Console.Clear();
-                        Console.Write(" ");
-                        Thread.Sleep(300);
-                        Console.Clear();
-                        Console.Write(q);
-                        Thread.Sleep(300);
-                        Console.Clear();
-                        Console.Write(" ");
-                        Thread.Sleep(300);
-                        Console.Clear();
-                        Console.Write(q);
-                        Thread.Sleep(300);
-                        Console.Clear();
-                        Console.Write(" ");
-                        Thread.Sleep(300);
-                        Console.Clear();
-                        Console.Write(q);
-                        Thread.Sleep(300);
-                        Console.Clear();
                         break;
-                    }                                    
+                    }
                 }
             }
         }
         Console.ResetColor();
+    }
+    public static void UISystem()
+    {
         Console.SetCursorPosition(0, 0);
         Thread.Sleep(1500);
+        int IntConversion = 0;
         Console.WriteLine($"1. Start Game                   Your score: {scoreCounter}");
         Console.WriteLine($"2. Instructions");
         Console.WriteLine($"3. Settings");
         Console.WriteLine($"4. Exit");
-        string UIInput = Console.ReadLine();
-        int IntConversion = 0;
-        bool isConverted = int.TryParse(UIInput, out IntConversion);
+        while (true)
+        {
+            string UIInput = Console.ReadLine();
+            if (UIInput == "1" || UIInput == "2" || UIInput == "3" || UIInput == "4")
+            {
+                bool isConverted = int.TryParse(UIInput, out IntConversion);
+                break;
+            }
+            Console.WriteLine("Please Try Again");
+        }
+
+
         if (IntConversion == 1)
         {
             gameStarting();
@@ -269,6 +266,7 @@ public class Program
     }
     public static void gameSettings()
     {
+        Console.Clear();
         Console.WriteLine("there are no settings. but say hi to shrek while your here!");
         Console.WriteLine("⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         Console.WriteLine("⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
@@ -300,42 +298,73 @@ public class Program
             Console.Write(".");
             Thread.Sleep(700);
             Console.WriteLine();
+            Console.Clear();
             UISystem();
         }
     }
     public static void gameInstructions()
     {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine("Purpose of the Game:");
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Guess the hidden word by choosing letters.");
         Console.WriteLine("Each incorrect guess costs you a life.");
         Console.WriteLine("Survive long enough to reveal the full word");
-        Console.WriteLine("How to Enter Guesses");
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.WriteLine("How to Enter Guesses:");
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Enter one letter at a time");
         Console.WriteLine("Letters must be alphabetic(A-Z).");
         Console.WriteLine("Capitalization does matter.");
-        Console.WriteLine("How Mistakes Work");
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.WriteLine("How Mistakes Work:");
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("You have 6 lives");
         Console.WriteLine("Each incorrect guess removes one life.");
         Console.WriteLine("If you reach zero, the game ends.");
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine("Revealing the Word:");
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Correct letters are shown in their positions.");
         Console.WriteLine("Unknown letter remain blanks/underscores.");
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine("Repeated Guesses:");
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Duplicate guesses do not cost lives.");
         Console.WriteLine("The game will warn you if you already tried that letter.");
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine("Winning and Losing:");
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Win by guessing all letters before running out of lives.");
         Console.WriteLine("Lose if your lives reach zero; the full word is then revealed.");
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine("Difficulty Levels:");
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Noob: Out of all the AM students. Guess there name.");
         Console.WriteLine("Pro: Now guess the AM students last names aswell.");
         Console.WriteLine("Hacker: This might be a little challenging. Guess the AM students GITHUB user-names.");
         Console.WriteLine("God: This is by far the easiest 💀💀💀... Lol... its just AM and PM github user-names.");
+        Console.WriteLine("Food: This is just a bunch of random foods generate by AI.");
+        Console.WriteLine("RandomWords: 40 random generated words form the Encyclopedia. Good Luck.");
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.WriteLine("Commands:");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine("Let me know when your ready to return. You better just type 'Ready'");
+        Console.ResetColor();
         while (true)
         {
             string returnToUI = Console.ReadLine().ToLower();
+            Console.Clear();
             if (returnToUI == "ready")
             {
                 UISystem();
@@ -351,10 +380,6 @@ public class Program
             Console.WriteLine();
             UISystem();
         }
-
-
-
-
 
     }
     public static void gameStarting()
@@ -404,8 +429,6 @@ public class Program
         }
 
     }
-
-
     //-----------------------------------------UI Systems Above 👆------------------------------------------------
     public static void systemABC(char letter, bool foundChar)
     {
