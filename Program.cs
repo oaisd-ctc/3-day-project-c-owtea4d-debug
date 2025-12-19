@@ -1,15 +1,18 @@
 using System;
 public class Program
 {
+    static string[] loader = { "■□□", "■■□", "■■■" };
+    static int[] loaderTimerMS = { 1000, 3 };
+    static string currentWord;
     static int globalNameLength;
     static int randomNumberCounter;
     static int counter;
     static int scoreCounter;
     static bool Loser;
     static char[] revealedChar;
-    public static string result = "abcdefghijklmnopqrstuvwxyz";
+    public static string abcResult = "abcdefghijklmnopqrstuvwxyz";
 
-//--------------------------------------------------Mains👇-------------------------------------------------------
+    //--------------------------------------------------Mains👇-------------------------------------------------------
     public static void Main(string[] args)
     {
         titleScreen();
@@ -43,7 +46,7 @@ public class Program
     }
     public static void MainMethod(string[] Names, int Namesi)
     {
-
+        currentWord = Names[Namesi];
         Console.WriteLine($"          +---+");
         Console.WriteLine($"          |   |");
         Console.WriteLine($"              |");
@@ -60,14 +63,38 @@ public class Program
         while (true)
         {
             Console.WriteLine("Enter a letter to search for:");
-            char characterToFind = Console.ReadLine()[0];
+            string firstInput = Console.ReadLine();
+            char characterToFind = firstInput[0];
+            commandCenter(firstInput);
             Console.Clear();
             Console.WriteLine($"Your score: {scoreCounter}");
             characterChecker(Names[Namesi], characterToFind);
+
         }
 
     }
+    public static void loadingProcess()
+    {
+        for (int i = 0; i < loaderTimerMS[1]; i++)
+        {
+            Console.Clear();
+            Console.Write(loader[i]);
+            Thread.Sleep(loaderTimerMS[0]);
+        }
 
+        Console.Clear();
+    }
+
+    //-----------------Commands👇--------------------------------
+    public static void commandCenter(string mainInput)
+    {
+        if (mainInput.ToLower() == "end" || mainInput.ToLower() == "back")
+        {
+            loadingProcess();
+            UISystem();
+        }
+    }
+    //--------------------Commands👆-----------------------------
 
     //-----------------------------------------UI Systems Below 👇------------------------------------------------
     public static void titleScreen()
@@ -114,6 +141,8 @@ public class Program
             if (i == 2 || i == 5 || i == 8 || i == 11)
             {
                 Console.ForegroundColor = ConsoleColor.Black;
+                Console.SetCursorPosition(50, 0);
+                Console.WriteLine(" ");
                 Console.SetCursorPosition(50, 1);
                 Console.WriteLine("            ███████████████████████████████████████            ");
                 Console.SetCursorPosition(50, 2);
@@ -139,12 +168,18 @@ public class Program
                 Console.WriteLine("            ███████████████████████████████████████            ");
                 Console.SetCursorPosition(50, 19);
                 Console.WriteLine("            ███████████████████████████████████████            ");
+                Console.SetCursorPosition(50, 20);
+                Console.WriteLine(" ");
                 Thread.Sleep(500);
                 Console.Clear();
             }
             if (i == 3 || i == 6 || i == 9 || i == 12)
             {
                 Console.ForegroundColor = ConsoleColor.Black;
+                Console.SetCursorPosition(50, 0);
+                Console.WriteLine(" ");
+                Console.SetCursorPosition(50, 1);
+                Console.WriteLine(" ");
                 Console.SetCursorPosition(50, 2);
                 Console.WriteLine("                      ██████████████████                       ");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -166,12 +201,19 @@ public class Program
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(50, 18);
                 Console.WriteLine("                      ██████████████████                       ");
+                Console.SetCursorPosition(50, 19);
+                Console.WriteLine(" ");
+                Console.SetCursorPosition(50, 20);
+                Console.WriteLine(" ");
                 Thread.Sleep(500);
                 Console.Clear();
+                Console.SetCursorPosition(50, 0);
+                Console.WriteLine(" ");
+                Console.SetCursorPosition(50, 1);
+                Console.WriteLine(" ");
+                Console.SetCursorPosition(50, 2);
+                Console.WriteLine(" ");
                 Console.WriteLine(@"
-
-
-
                                                     ____  _____  ______ _____         _______ _____  ____  _   _    
                                                     / __ \|  __ \|  ____|  __ \     /\|__   __|_   _/ __ \| \ | | 
                                                     | |  | | |__) | |__  | |__) |   /  \  | |    | || |  ||  \| |
@@ -185,6 +227,12 @@ public class Program
                                                         | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |   
                                                         |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|   
             ");
+                Console.SetCursorPosition(50, 18);
+                Console.WriteLine(" ");
+                Console.SetCursorPosition(50, 19);
+                Console.WriteLine(" ");
+                Console.SetCursorPosition(50, 20);
+                Console.WriteLine(" ");
                 Thread.Sleep(500);
                 Console.Clear();
             }
@@ -289,6 +337,7 @@ public class Program
             string returnToUI = Console.ReadLine().ToLower();
             if (returnToUI == "ready")
             {
+                Console.Clear();
                 UISystem();
             }
             Console.Write("idc what you typed.");
@@ -357,6 +406,8 @@ public class Program
         Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine("Commands:");
         Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("● End/Back - Want to end the game early? Try this!");
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Black;
         Console.WriteLine("Let me know when your ready to return. You better just type 'Ready'");
@@ -378,6 +429,7 @@ public class Program
             Console.Write(".");
             Thread.Sleep(700);
             Console.WriteLine();
+            Console.Clear();
             UISystem();
         }
 
@@ -393,7 +445,16 @@ public class Program
         Console.WriteLine($"4. God - am and pm github users (CASE SENSITIVE)");
         Console.WriteLine($"5. Food - this is a list of 40 different foods (CASE SENSITIVE)");
         Console.WriteLine($"6. Encyclopedia - this has 40 different words from the encyclopedia (CASE SENSITIVE)");
-        string DifficultyInput = Console.ReadLine();
+        string DifficultyInput;
+        while (true)
+        {
+            DifficultyInput = Console.ReadLine();
+            if (DifficultyInput == "1" || DifficultyInput == "2" || DifficultyInput == "3" || DifficultyInput == "4" || DifficultyInput == "5" || DifficultyInput == "6")
+            {
+                break;
+            }
+            Console.WriteLine("Please Try Again.");
+        }
         Console.Clear();
         int IntConversion = 0;
         bool isConverted = int.TryParse(DifficultyInput, out IntConversion);
@@ -432,7 +493,7 @@ public class Program
     //-----------------------------------------UI Systems Above 👆------------------------------------------------
     public static void systemABC(char letter, bool foundChar)
     {
-        char[] l = result.ToCharArray();
+        char[] l = abcResult.ToCharArray();
 
         for (int i = 0; i < l.Length; i++)
         {
@@ -450,9 +511,7 @@ public class Program
                 }
             }
         }
-        result = new string(l);
-
-
+        abcResult = new string(l);
     }
 
     public static void scoreSystem(bool W)
@@ -522,7 +581,7 @@ public class Program
             Thread.Sleep(1250);
             Console.Write(".");
             Thread.Sleep(1250);
-            result = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            abcResult = "abcdefghijklmnopqrstuvwxyz";
             Console.Clear();
             scoreSystem(allRevealed);
             Console.WriteLine("Congrats you've won");
@@ -671,7 +730,7 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
-            Console.WriteLine(result);
+            Console.WriteLine(abcResult);
         }
         else if (counter == 1)
         {
@@ -684,7 +743,7 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
-            Console.WriteLine(result);
+            Console.WriteLine(abcResult);
         }
         else if (counter == 2)
         {
@@ -697,7 +756,7 @@ public class Program
             Console.WriteLine($"              |");
             Console.WriteLine($"              |");
             Console.WriteLine($"          =========");
-            Console.WriteLine(result);
+            Console.WriteLine(abcResult);
         }
         else if (counter == 3)
         {
@@ -710,7 +769,7 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
-            Console.WriteLine(result);
+            Console.WriteLine(abcResult);
         }
         else if (counter == 4)
         {
@@ -723,7 +782,7 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
-            Console.WriteLine(result);
+            Console.WriteLine(abcResult);
         }
         else if (counter == 5)
         {
@@ -736,7 +795,7 @@ public class Program
             Console.WriteLine(@"         /    |");
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
-            Console.WriteLine(result);
+            Console.WriteLine(abcResult);
         }
         else if (counter == 6)
         {
@@ -749,7 +808,7 @@ public class Program
             Console.WriteLine(@"              |");
             Console.WriteLine(@"          =========");
 
-            result = "abcdefghijklmnopqrstuvwxyz";
+            abcResult = "abcdefghijklmnopqrstuvwxyz";
             Thread.Sleep(1500);
             Console.Clear();
             Console.Write(".");
@@ -758,9 +817,19 @@ public class Program
             Thread.Sleep(300);
             Console.Write(".");
             Thread.Sleep(300);
+            Console.Clear();
+            Thread.Sleep(300);
             Console.WriteLine();
-            Console.WriteLine($"Game Over. Nice Try.");
-            Console.WriteLine();
+            Console.WriteLine($"Game Over. Nice Try. ");
+            Thread.Sleep(2000);
+            Console.Clear();
+            Console.WriteLine($"The word you got incorrect was: {currentWord}");
+            Thread.Sleep(1000);
+            Console.Write(".");
+            Thread.Sleep(1000);
+            Console.Write(".");
+            Thread.Sleep(1250);
+            Console.Write(".");
             Thread.Sleep(1250);
             Console.Clear();
             Console.WriteLine("Want to watch the credits? yes or no");
