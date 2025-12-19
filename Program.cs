@@ -189,25 +189,35 @@ public class Program
             }
             if (i == 13)
             {
-                for (int n = 0; n < 3; n++)
+                string q = " █";
+                
+                for (int n = 0; n <= 20; n++)
                 {
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    Console.SetCursorPosition(50, 10);
-                    Console.WriteLine(" ██████████████████████████████████████████████████████████████");
-                    Console.SetCursorPosition(50, 11);
-                    Console.WriteLine(" ██████████████████████████████████████████████████████████████");
-                    Console.SetCursorPosition(50, 12);
-                    Console.WriteLine(" ██████████████████████████████████████████████████████████████");
-                    Thread.Sleep(400);
-                    Console.Clear();
-                    Console.SetCursorPosition(50, 11);
-                    Console.WriteLine(" ");
-                    Console.SetCursorPosition(50, 11);
-                    Console.WriteLine(" ");
-                    Console.SetCursorPosition(50, 12);
-                    Console.WriteLine(" ");
-                    Thread.Sleep(400);
-                    Console.Clear();
+                    Console.Write(q);
+                    Thread.Sleep(200);
+                    if (n == 20)
+                    {
+                        Console.Clear();
+                        Console.Write(" ");
+                        Thread.Sleep(300);
+                        Console.Clear();
+                        Console.Write(q);
+                        Thread.Sleep(300);
+                        Console.Clear();
+                        Console.Write(" ");
+                        Thread.Sleep(300);
+                        Console.Clear();
+                        Console.Write(q);
+                        Thread.Sleep(300);
+                        Console.Clear();
+                        Console.Write(" ");
+                        Thread.Sleep(300);
+                        Console.Clear();
+                        Console.Write(q);
+                        Thread.Sleep(300);
+                        Console.Clear();
+                        break;
+                    }                                    
                 }
             }
         }
